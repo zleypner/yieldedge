@@ -1,144 +1,101 @@
 'use client';
 
 import { motion } from 'framer-motion';
-// No icon imports needed - using emojis instead
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 overflow-hidden pb-32">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
+    <section className="relative min-h-screen bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 overflow-hidden">
+      {/* Background Orbs */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-16 left-10 w-80 h-80 bg-cyan-400/20 rounded-full blur-3xl animate-float"></div>
+        <div
+          className="absolute bottom-24 right-16 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: '2s' }}
+        ></div>
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-50 backdrop-blur-md bg-blue-900/20 fixed w-full top-0 px-8 py-6 flex justify-between items-center">
-        <motion.div
+      <nav className="fixed w-full top-0 z-50 px-8 py-6 flex justify-between items-center backdrop-blur-md bg-blue-900/20 border-b border-white/10">
+        {/* Logo */}
+        <motion.h1
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-2xl font-bold text-white"
+          className="text-2xl font-semibold text-white tracking-tight"
         >
           Global Digital Growth
-        </motion.div>
+        </motion.h1>
+
+        {/* Menu */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="hidden md:flex gap-8 text-sm text-blue-100 hover:text-white transition"
+          className="hidden md:flex gap-10 text-sm font-medium text-blue-100"
         >
-          <a href="#services" className="hover:text-white transition-colors">Servicios</a>
-          <a href="#about" className="hover:text-white transition-colors">Nosotros</a>
-          <a href="#portfolio" className="hover:text-white transition-colors">Portafolio</a>
-          <a href="#contact" className="hover:text-white transition-colors">Contacto</a>
+          <a href="#how-it-works" className="hover:text-white transition-colors duration-300">
+            Cómo Funciona
+          </a>
+          <a href="#contact" className="hover:text-white transition-colors duration-300">
+            Contacto
+          </a>
         </motion.div>
       </nav>
 
       {/* Hero Content */}
-      <div className="relative z-10 flex flex-col justify-center items-center text-center min-h-[90vh] pt-24 md:pt-32">
-        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12">
-          {/* Scarcity Banner */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8"
-          >
-            <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
-            <span className="text-white/90 text-sm font-medium">Oferta por Tiempo Limitado - Solo 3 Espacios de Consultoría Restantes Esta Semana</span>
-          </motion.div>
-
-          {/* Main Headline */}
+      <div className="relative z-10 flex flex-col justify-center items-center text-center min-h-screen pt-28 md:pt-36 pb-40">
+        <div className="max-w-5xl mx-auto px-6 md:px-8 lg:px-12">
+          {/* Headline - The Problem */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8 tracking-tight"
           >
-            Construye. Automatiza.{' '}
-            <span className="text-gradient bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">
-              Escala.
+            ¿Tu Negocio Pierde Tiempo en{' '}
+            <span className="bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">
+              Tareas Repetitivas?
             </span>
           </motion.h1>
 
-          {/* Subheadline */}
+          {/* Subheadline - The Solution */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-lg md:text-xl text-blue-50/90 max-w-3xl mx-auto leading-relaxed mb-10"
+            className="text-xl md:text-2xl text-blue-50 max-w-3xl mx-auto leading-relaxed mb-12"
           >
-            Creamos software inteligente que ahorra tiempo, aumenta los ingresos y ayuda a tu negocio a crecer sin esfuerzo.
+            Automatizamos lo complicado para que tú te enfoques en lo que importa: hacer crecer tu negocio.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex gap-6 justify-center mb-10 flex-wrap"
+            className="mb-16"
           >
-            <motion.button
+            <motion.a
+              href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-blue-700 hover:bg-blue-50 font-semibold rounded-full px-10 py-4 shadow-lg flex items-center gap-3 text-lg"
+              className="inline-block bg-white text-blue-700 hover:bg-blue-50 font-bold rounded-full px-12 py-5 shadow-2xl text-xl transition-colors duration-300"
             >
-              💡 Obtén una Consultoría Gratuita
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border border-white text-white hover:bg-blue-700 px-10 py-4 rounded-full font-semibold flex items-center gap-3 text-lg"
-            >
-              👁 Ver Proyectos
-            </motion.button>
+              Empieza Ahora - Es Gratis
+            </motion.a>
+            <p className="text-blue-100 text-sm mt-4">Sin tarjeta de crédito • Consultoría gratuita</p>
           </motion.div>
 
-          {/* Social Proof */}
+          {/* Simple Social Proof */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-sm md:text-base text-blue-100/80 flex flex-wrap justify-center gap-8 mt-6"
+            className="text-blue-100/90"
           >
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-8 h-8 bg-white/20 rounded-full border-2 border-white/30"></div>
-                ))}
-              </div>
-              <span className="text-sm">Confiado por más de 50 empresas en América Latina</span>
-            </div>
-            <div className="text-sm">
-              <span className="font-semibold">300%</span> incremento promedio en ingresos
-            </div>
-            <div className="text-sm">
-              <span className="font-semibold">60%</span> reducción de costos
-            </div>
+            <p className="text-lg">Más de 50 empresas ya ahorran tiempo y aumentan sus ingresos con nosotros</p>
           </motion.div>
         </div>
-      </div>
-
-      {/* Floating Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-1/4 w-4 h-4 bg-white/20 rounded-full"
-        ></motion.div>
-        <motion.div
-          animate={{ y: [0, 20, 0] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute top-3/4 right-1/4 w-6 h-6 bg-cyan-300/30 rounded-full"
-        ></motion.div>
-        <motion.div
-          animate={{ y: [0, -15, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute top-1/2 right-1/3 w-3 h-3 bg-blue-300/40 rounded-full"
-        ></motion.div>
       </div>
     </section>
   );

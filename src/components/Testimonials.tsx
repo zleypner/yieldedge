@@ -6,59 +6,39 @@ import { Star, Quote } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    name: "María Gonzalez",
-    title: "CEO, RetailTech Solutions",
+    name: "María González",
+    title: "Dueña de Tienda",
     location: "Chile",
     rating: 5,
-    quote: "We were skeptical at first, but the results speak for themselves. Our revenue tripled in just 6 months. This is not an exaggeration - it&apos;s our reality now.",
+    quote: "Nuestras ventas se triplicaron en 6 meses. Ya no pierdo tiempo con tareas manuales y puedo enfocarme en crecer mi negocio.",
     avatar: "MG",
     gradient: "from-blue-500 to-cyan-500"
   },
   {
     id: 2,
     name: "Carlos Mora",
-    title: "Operations Director, FinServe Pro",
+    title: "Director de Operaciones",
     location: "Costa Rica",
     rating: 5,
-    quote: "The ROI was immediate. We processed 4x more clients without hiring a single additional employee. Our team finally focuses on high-value work instead of repetitive tasks.",
+    quote: "Ahora atendemos 4 veces más clientes sin contratar más personal. Mi equipo está feliz porque puede hacer trabajo importante, no tareas repetitivas.",
     avatar: "CM",
     gradient: "from-cyan-500 to-teal-500"
   },
   {
     id: 3,
     name: "Ana Silva",
-    title: "COO, LogiTech Inc",
+    title: "Emprendedora",
     location: "Chile",
     rating: 5,
-    quote: "Best business decision we&apos;ve made. The automation handles everything 24/7. We&apos;re now expanding to three new markets with the same team size.",
+    quote: "La mejor decisión para mi negocio. Todo funciona automáticamente 24/7. Ahora estamos creciendo a nuevos mercados sin problemas.",
     avatar: "AS",
     gradient: "from-teal-500 to-green-500"
-  },
-  {
-    id: 4,
-    name: "Roberto Martinez",
-    title: "CTO, TechStart Chile",
-    location: "Chile",
-    rating: 5,
-    quote: "The technical implementation was flawless. They understood our complex requirements and delivered beyond expectations. Our development time was cut in half.",
-    avatar: "RM",
-    gradient: "from-green-500 to-emerald-500"
-  },
-  {
-    id: 5,
-    name: "Isabella Rodriguez",
-    title: "Founder, EcoCommerce",
-    location: "Costa Rica",
-    rating: 5,
-    quote: "Working with Anvu was like having a tech team that actually understood our business. They didn&apos;t just build software, they built solutions that made sense.",
-    avatar: "IR",
-    gradient: "from-emerald-500 to-blue-500"
   }
 ];
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-32 md:py-40 bg-white">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         {/* Section Header */}
         <motion.div
@@ -66,18 +46,21 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            What Our <span className="text-gradient">Clients Say</span>
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            Historias de{' '}
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              Éxito Real
+            </span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Don&apos;t just take our word for it - hear from business leaders who transformed their companies
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Personas como tú que transformaron sus negocios
           </p>
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-12 mb-24">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
@@ -126,25 +109,21 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 text-white text-center"
+          className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl p-12 text-white text-center"
         >
-          <h3 className="text-2xl font-bold mb-6">Join 50+ Successful Companies</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <h3 className="text-3xl md:text-4xl font-bold mb-12">Únete a Más de 50 Negocios Exitosos</h3>
+          <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div>
-              <div className="text-3xl font-bold mb-2">50+</div>
-              <div className="text-blue-100">Happy Clients</div>
+              <div className="text-4xl md:text-5xl font-bold mb-3">50+</div>
+              <div className="text-blue-100 text-lg">Clientes Felices</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">99%</div>
-              <div className="text-blue-100">Satisfaction Rate</div>
+              <div className="text-4xl md:text-5xl font-bold mb-3">300%</div>
+              <div className="text-blue-100 text-lg">Crecimiento Promedio</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">300%</div>
-              <div className="text-blue-100">Avg Revenue Growth</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">24/7</div>
-              <div className="text-blue-100">Support Available</div>
+              <div className="text-4xl md:text-5xl font-bold mb-3">99%</div>
+              <div className="text-blue-100 text-lg">Satisfacción</div>
             </div>
           </div>
         </motion.div>

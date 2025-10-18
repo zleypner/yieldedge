@@ -32,34 +32,26 @@ const benefits = [
 
 const faqItems = [
   {
-    question: "¿Qué tan rápido podemos ver resultados?",
-    answer: "La mayoría de clientes ven mejoras medibles en 30 días, con implementación completa típicamente tomando 2-6 meses dependiendo de la complejidad."
+    question: "¿Qué tan rápido veo resultados?",
+    answer: "La mayoría de clientes ven mejoras en 30 días. Es rápido y efectivo."
   },
   {
-    question: "¿Necesitamos experiencia técnica para implementar esto?",
-    answer: "¡Para nada! Nosotros manejamos todos los aspectos técnicos y proporcionamos capacitación integral para tu equipo."
-  },
-  {
-    question: "¿Qué si no funciona para nuestra industria específica?",
-    answer: "Hemos implementado exitosamente soluciones en más de 15 industrias. Nuestra consultoría gratuita determinará el mejor enfoque para tu negocio."
+    question: "¿Necesito saber de tecnología?",
+    answer: "No. Nosotros hacemos todo el trabajo técnico. Tú solo nos cuentas qué necesitas."
   },
   {
     question: "¿Cuánto cuesta?",
-    answer: "La inversión varía según tus necesidades. Nuestra consultoría gratuita incluye un desglose detallado de costos sin tarifas ocultas."
+    answer: "Depende de lo que necesites. En la consultoría gratuita te damos un precio claro, sin sorpresas."
   },
   {
-    question: "¿Esto reemplazará a nuestros empleados?",
-    answer: "¡No! Nuestras soluciones mejoran las capacidades de tu equipo, permitiéndoles enfocarse en trabajo estratégico de alto valor."
-  },
-  {
-    question: "¿Por qué deberíamos actuar ahora?",
-    answer: "Cada día sin automatización te cuesta ingresos potenciales. Además, tenemos capacidad limitada y solo tomamos 3 nuevos proyectos por mes."
+    question: "¿Por qué debo actuar ahora?",
+    answer: "Cada día que esperas, pierdes dinero. Además, solo tenemos 3 espacios disponibles este mes."
   }
 ];
 
 export default function CTA() {
   return (
-    <section className="py-20 md:py-28 bg-gray-50 mt-20 md:mt-28">
+    <section className="py-32 md:py-40 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         {/* Main CTA */}
         <motion.div
@@ -82,22 +74,25 @@ export default function CTA() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8"
             >
               <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium">Limited Time Offer - Only 3 Consultation Slots Left This Week</span>
+              <span className="text-sm font-medium">Solo 3 espacios disponibles esta semana</span>
             </motion.div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
-              Stop Leaving Money on the Table
+            <h2 className="text-4xl md:text-6xl font-bold mb-8">
+              ¿Listo Para{' '}
+              <span className="bg-gradient-to-r from-cyan-200 to-blue-200 bg-clip-text text-transparent">
+                Crecer
+              </span>?
             </h2>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Every day without AI automation is costing you thousands. Schedule a free strategy call and discover exactly how much revenue you&apos;re missing out on.
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Agenda una llamada gratuita y descubre cuánto puedes ahorrar y ganar con la automatización.
             </p>
 
             {/* Benefits */}
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
               {benefits.map((benefit, index) => {
                 return (
                   <motion.div
@@ -126,31 +121,15 @@ export default function CTA() {
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 mx-auto mb-4"
+              className="bg-white text-blue-600 px-12 py-5 rounded-full font-bold text-xl shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center gap-3 mx-auto mb-6"
             >
-              <Calendar className="w-5 h-5" />
-              Book Your Free Strategy Call Now
-              <ArrowRight className="w-5 h-5" />
+              Agenda Tu Consultoría Gratuita
+              <ArrowRight className="w-6 h-6" />
             </motion.button>
 
-            <div className="flex items-center justify-center gap-4 text-sm text-white/80">
-              <div className="flex items-center gap-1">
-                <Zap className="w-4 h-4" />
-                <span>Instant confirmation</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Clock className="w-4 h-4" />
-                <span>30-minute call</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <DollarSign className="w-4 h-4" />
-                <span>Discover your revenue potential</span>
-              </div>
-            </div>
-
-            <div className="mt-4 text-sm text-white/70">
-              Only 3 consultation slots left this week
-            </div>
+            <p className="text-white/90 text-lg">
+              100% gratis • Sin compromiso • 30 minutos
+            </p>
           </div>
         </motion.div>
 
@@ -160,16 +139,16 @@ export default function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto mt-20"
         >
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-8">
-            Frequently Asked Questions
+          <h3 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-8">
+            Preguntas Frecuentes
           </h3>
-          <p className="text-gray-600 text-center mb-12">
-            Everything you need to know before getting started
+          <p className="text-xl text-gray-600 text-center mb-12">
+            Respuestas claras y directas
           </p>
 
-          <div className="space-y-4">
+          <div className="space-y-8">
             {faqItems.map((item, index) => (
               <motion.div
                 key={index}
@@ -180,7 +159,7 @@ export default function CTA() {
                 className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
               >
                 <details className="group">
-                  <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors">
+                  <summary className="flex items-center justify-between p-8 cursor-pointer hover:bg-gray-50 transition-colors">
                     <span className="font-semibold text-gray-900">{item.question}</span>
                     <div className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -188,7 +167,7 @@ export default function CTA() {
                       </svg>
                     </div>
                   </summary>
-                  <div className="px-6 pb-6 text-gray-600">
+                  <div className="px-8 pb-8 text-gray-600">
                     {item.answer}
                   </div>
                 </details>
