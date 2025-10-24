@@ -1,140 +1,98 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Github, Linkedin, Twitter } from 'lucide-react';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const itemVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6 } },
+  };
 
   return (
-    <footer className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-10 md:mb-12">
-          {/* Company Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="col-span-1 sm:col-span-2 lg:col-span-2"
-          >
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Global Digital Growth</h3>
-            <p className="text-sm sm:text-base text-blue-200 mb-4 sm:mb-6 max-w-md">
-              Construyendo soluciones de software innovadoras que ayudan a las empresas a automatizar, escalar y prosperar en la era digital.
+    <footer className="relative bg-white border-t border-blue-100 overflow-hidden">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false }}
+        className="max-w-7xl mx-auto px-6 py-20"
+      >
+        {/* Main content */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+          {/* About */}
+          <motion.div variants={itemVariants} className="lg:col-span-2">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold">Y</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900">Yieldge</h3>
+            </div>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Transformando desafíos tecnológicos complejos en crecimiento medible. Ingenieramos precisión. Entregamos resultados.
             </p>
-            <div className="flex gap-3 sm:gap-4">
-              <a
-                href="#"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
-                aria-label="Twitter"
-              >
-                🐦
+            <p className="text-sm text-gray-500">
+              © 2025 Yieldge — Donde la Precisión Impulsa el Crecimiento.
+            </p>
+          </motion.div>
+
+          {/* Services */}
+          <motion.div variants={itemVariants}>
+            <h4 className="font-bold text-gray-900 mb-6">Servicios</h4>
+            <ul className="space-y-3">
+              {['Software Personalizado', 'Arquitectura de Rendimiento', 'Integración de API', 'Sistemas de IA'].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Resources */}
+          <motion.div variants={itemVariants}>
+            <h4 className="font-bold text-gray-900 mb-6">Recursos</h4>
+            <ul className="space-y-3">
+              {['Blog', 'Casos de Estudio', 'Carreras', 'Contacto'].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Social */}
+          <motion.div variants={itemVariants}>
+            <h4 className="font-bold text-gray-900 mb-6">Conecta</h4>
+            <div className="flex gap-4">
+              <a href="#" className="p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+                <Linkedin className="w-5 h-5 text-blue-600" />
               </a>
-              <a
-                href="#"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
-                aria-label="LinkedIn"
-              >
-                💼
+              <a href="#" className="p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+                <Github className="w-5 h-5 text-blue-600" />
               </a>
-              <a
-                href="#"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
-                aria-label="GitHub"
-              >
-                💻
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 sm:w-10 sm:h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
-                aria-label="Email"
-              >
-                📧
+              <a href="#" className="p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+                <Twitter className="w-5 h-5 text-blue-600" />
               </a>
             </div>
           </motion.div>
-
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Enlaces Rápidos</h4>
-            <ul className="space-y-2 text-sm sm:text-base">
-              <li>
-                <a href="#services" className="text-blue-200 hover:text-white transition-colors">
-                  Servicios
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-blue-200 hover:text-white transition-colors">
-                  Nosotros
-                </a>
-              </li>
-              <li>
-                <a href="#portfolio" className="text-blue-200 hover:text-white transition-colors">
-                  Portafolio
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-blue-200 hover:text-white transition-colors">
-                  Contacto
-                </a>
-              </li>
-            </ul>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Contacto</h4>
-            <ul className="space-y-2 text-blue-200 text-sm sm:text-base">
-              <li className="flex items-center gap-2">
-                <span>📍</span>
-                <span>América Latina</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span>📧</span>
-                <span>info@anvu.com</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span>📱</span>
-                <span>+1 (555) 123-4567</span>
-              </li>
-            </ul>
-          </motion.div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom line */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="border-t border-blue-700/50 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4"
+          variants={itemVariants}
+          className="border-t border-blue-100 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-600"
         >
-          <p className="text-blue-200 text-xs sm:text-sm text-center sm:text-left">
-            © {currentYear} Global Digital Growth. Todos los derechos reservados.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm">
-            <a href="#" className="text-blue-200 hover:text-white transition-colors">
-              Política de Privacidad
-            </a>
-            <a href="#" className="text-blue-200 hover:text-white transition-colors">
-              Términos de Servicio
-            </a>
-            <a href="#" className="text-blue-200 hover:text-white transition-colors">
-              Política de Cookies
-            </a>
+          <p>Ingenierizado para crecimiento. Construido para precisión.</p>
+          <div className="flex gap-8 mt-4 sm:mt-0">
+            <a href="#" className="hover:text-blue-600 transition-colors">Privacidad</a>
+            <a href="#" className="hover:text-blue-600 transition-colors">Términos</a>
+            <a href="#" className="hover:text-blue-600 transition-colors">Contacto</a>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </footer>
   );
 }
-

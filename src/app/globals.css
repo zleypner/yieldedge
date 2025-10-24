@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111827;
+  --accent-green: #D4F364;
+  --accent-green-hover: #c5e855;
   --sky-blue: #0ea5e9;
   --deep-blue: #1e40af;
   --navy: #1e3a8a;
   --cyan: #06b6d4;
   --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #1e40af 50%, #1e3a8a 100%);
   --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
-  
+
   /* Responsive spacing system */
   --spacing-xs: 0.5rem;   /* 8px */
   --spacing-sm: 1rem;     /* 16px */
@@ -26,13 +27,6 @@
   --color-foreground: var(--foreground);
   --font-sans: 'Inter', sans-serif;
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 * {
