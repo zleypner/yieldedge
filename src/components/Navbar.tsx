@@ -12,7 +12,6 @@ export default function Navbar() {
     { label: 'Proceso', href: '#proceso' },
     { label: 'Resultados', href: '#resultados' },
     { label: 'Sobre Nosotros', href: '#sobre-nosotros' },
-    { label: 'Blog', href: '#blog' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -33,22 +32,20 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed w-full top-0 z-50 px-4 sm:px-6 md:px-8 lg:px-12 py-4 md:py-6 flex justify-between items-center backdrop-blur-md bg-white/90 border-b border-blue-100 shadow-sm"
+      className="fixed w-full top-0 z-50 px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center backdrop-blur-xl bg-white/80 border-b border-gray-100"
+      role="navigation"
     >
       {/* Logo */}
       <motion.a
         href="#hero"
         onClick={(e) => handleNavClick(e, '#hero')}
-        className="flex items-center gap-3 cursor-pointer"
+        className="flex items-center gap-2 cursor-pointer"
+        aria-label="Yieldge Home"
       >
-        <motion.div
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-blue-500 rounded-lg flex items-center justify-center shadow-lg shadow-blue-600/20"
-        >
-          <span className="text-white font-bold text-lg sm:text-xl">Y</span>
-        </motion.div>
-        <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600 tracking-widest">
+        <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-500 rounded-lg flex items-center justify-center shadow-md">
+          <span className="text-white font-bold text-lg">Y</span>
+        </div>
+        <h1 className="text-xl font-light text-gray-900 tracking-tight">
           Yieldge
         </h1>
       </motion.a>
@@ -65,7 +62,7 @@ export default function Navbar() {
             key={link.label}
             href={link.href}
             onClick={(e) => handleNavClick(e, link.href)}
-            className="text-gray-700 hover:text-blue-600 transition-colors text-sm font-medium cursor-pointer"
+            className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-light cursor-pointer"
           >
             {link.label}
           </a>
@@ -76,9 +73,9 @@ export default function Navbar() {
       <motion.a
         href="#cta"
         onClick={(e) => handleNavClick(e, '#cta')}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="hidden sm:inline-block px-6 py-2.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-sm shadow-lg shadow-blue-600/20 cursor-pointer"
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className="hidden sm:inline-block px-5 py-2 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition-all duration-300 text-sm shadow-sm hover:shadow-md cursor-pointer"
       >
         Consulta Gratis
       </motion.a>
@@ -103,23 +100,24 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="absolute top-full left-0 right-0 mt-2 bg-white border border-blue-100 rounded-lg shadow-lg md:hidden"
+          className="absolute top-full left-0 right-0 mt-2 mx-4 bg-white/95 backdrop-blur-xl border border-gray-100 rounded-2xl shadow-xl md:hidden"
         >
-          <div className="flex flex-col p-4 gap-3">
+          <div className="flex flex-col p-4 gap-2">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-gray-700 hover:text-blue-600 transition-colors text-sm font-medium py-2 px-4 rounded hover:bg-blue-50 cursor-pointer"
+                className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-light py-3 px-4 rounded-xl hover:bg-gray-50 cursor-pointer"
               >
                 {link.label}
               </a>
             ))}
+            <div className="h-px bg-gray-100 my-2" />
             <a
               href="#cta"
               onClick={(e) => handleNavClick(e, '#cta')}
-              className="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-sm text-center cursor-pointer"
+              className="px-4 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-colors text-sm text-center cursor-pointer"
             >
               Consulta Gratis
             </a>
@@ -129,3 +127,4 @@ export default function Navbar() {
     </motion.nav>
   );
 }
+

@@ -3,7 +3,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Problem from '@/components/Problem';
-import Guide from '@/components/Guide';
 import Process from '@/components/Process';
 import CaseStudies from '@/components/CaseStudies';
 import Vision from '@/components/Vision';
@@ -16,7 +15,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Problem />
-      <Guide />
       <Process />
       <CaseStudies />
       <Vision />

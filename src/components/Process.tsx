@@ -1,131 +1,140 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Zap, Cpu, TrendingUp } from 'lucide-react';
+import { useRef } from 'react';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+    y: 0,
+    transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] as const },
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
 };
 
 export default function Process() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
   const steps = [
     {
       num: '01',
       title: 'Diagnosticar',
-      desc: 'Análisis estratégico y mapeo de rendimiento',
+      desc: 'Análisis estratégico de rendimiento',
       icon: Zap,
-      details: 'Auditamos tu infraestructura actual, identificamos cuellos de botella y mapeamos tu panorama de rendimiento para entender dónde la ingeniería de precisión desbloqueará el máximo crecimiento.'
+      details: 'Auditamos tu infraestructura actual, identificamos cuellos de botella y mapeamos tu panorama de rendimiento.'
     },
     {
       num: '02',
       title: 'Diseñar',
-      desc: 'Arquitectura de software personalizada',
+      desc: 'Arquitectura personalizada',
       icon: Cpu,
-      details: 'Nuestros arquitectos diseñan un plano técnico personalizado que alinea la innovación con tus objetivos empresariales, asegurando escalabilidad, seguridad y ganancias de rendimiento medibles.'
+      details: 'Diseñamos un plano técnico que alinea innovación con objetivos empresariales, asegurando escalabilidad y rendimiento.'
     },
     {
       num: '03',
       title: 'Entregar',
-      desc: 'Resultados de crecimiento medible',
+      desc: 'Resultados medibles',
       icon: TrendingUp,
-      details: 'Ejecutamos con precisión, desplegamos con responsabilidad y rastreamos cada métrica. Tu éxito es nuestro punto de referencia, e iteramos hasta que logres tus objetivos de crecimiento.'
+      details: 'Ejecutamos con precisión, desplegamos con responsabilidad y rastreamos cada métrica hasta lograr tus objetivos.'
     }
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-blue-50/50 overflow-hidden py-24" id="proceso">
+    <section 
+      ref={sectionRef}
+      className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden" 
+      id="proceso"
+    >
       {/* Main content */}
       <motion.div
-        variants={containerVariants}
+        style={{ opacity, scale }}
+        variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
-        className="relative z-10 max-w-6xl mx-auto px-6"
+        viewport={{ once: true, amount: 0.3 }}
+        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32"
       >
-        {/* Section label */}
-        <motion.div variants={itemVariants} className="text-center mb-6">
-          <span className="text-sm font-semibold text-blue-600 tracking-widest uppercase">
-            El Plan
-          </span>
-        </motion.div>
+        {/* Section header */}
+        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
+          <motion.div variants={fadeInUp} className="mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium tracking-wide">
+              Nuestro proceso
+            </span>
+          </motion.div>
 
-        {/* Headline */}
-        <motion.h2
-          variants={itemVariants}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 text-center mb-4 leading-tight"
-        >
-          De la Visión al Rendimiento
-        </motion.h2>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight text-gray-900 mb-6 leading-[1.1]"
+          >
+            De la visión al{' '}
+            <span className="font-normal bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+              rendimiento
+            </span>
+          </motion.h2>
 
-        <motion.p
-          variants={itemVariants}
-          className="text-center text-xl text-gray-600 mb-16 max-w-3xl mx-auto"
-        >
-          Nuestro Proceso Probado de 3 Pasos
-        </motion.p>
+          <motion.p
+            variants={fadeInUp}
+            className="text-lg sm:text-xl font-light text-gray-600 leading-relaxed"
+          >
+            Tres pasos probados para transformar tu infraestructura
+          </motion.p>
+        </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Steps grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {steps.map((step, idx) => {
             const IconComponent = step.icon;
             return (
               <motion.div
                 key={idx}
-                variants={itemVariants}
-                className="relative"
+                variants={fadeInUp}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3 }}
+                className="relative group"
               >
-                {/* Connector line (hidden on mobile) */}
-                {idx < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-20 left-full w-full h-1 bg-gradient-to-r from-blue-600 to-transparent transform translate-x-4"></div>
-                )}
-
                 {/* Card */}
-                <div className="bg-white rounded-2xl p-8 border border-blue-200 hover:border-blue-400 transition-all duration-300 h-full flex flex-col">
-                  {/* Number */}
-                  <div className="text-5xl font-bold text-blue-600/20 mb-4">{step.num}</div>
-
+                <div className="bg-white rounded-3xl p-8 lg:p-10 border border-gray-100 hover:border-blue-200 transition-all duration-500 h-full flex flex-col shadow-sm hover:shadow-md">
                   {/* Icon */}
                   <div className="mb-6">
-                    <div className="w-16 h-16 rounded-xl bg-blue-100 flex items-center justify-center">
-                      <IconComponent className="w-8 h-8 text-blue-600" />
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-7 h-7 text-blue-600" />
                     </div>
                   </div>
 
+                  {/* Number indicator */}
+                  <div className="text-7xl font-extralight text-blue-600/10 absolute top-6 right-6">
+                    {step.num}
+                  </div>
+
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{step.title}</h3>
-                  <p className="text-sm font-semibold text-blue-600 mb-4 uppercase tracking-wide">{step.desc}</p>
+                  <h3 className="text-2xl sm:text-3xl font-light text-gray-900 mb-2">{step.title}</h3>
+                  <p className="text-sm font-medium text-blue-600 mb-4 tracking-wide">{step.desc}</p>
 
                   {/* Details */}
-                  <p className="text-gray-600 leading-relaxed flex-grow">{step.details}</p>
+                  <p className="text-gray-600 leading-relaxed flex-grow font-light">{step.details}</p>
                 </div>
               </motion.div>
             );
           })}
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div variants={itemVariants} className="text-center mt-16">
-          <p className="text-gray-700 text-lg mb-6">
-            Cada paso está diseñado para impulsar un impacto medible en tu línea de base.
-          </p>
-          <motion.a
-            href="#cta"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300"
-          >
-            Ver Cómo Funciona
-          </motion.a>
-        </motion.div>
       </motion.div>
     </section>
   );

@@ -1,70 +1,128 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { X, Check } from 'lucide-react';
+import { useRef } from 'react';
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] as const },
+  },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
 };
 
 export default function Vision() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-blue-50/50 overflow-hidden py-24" id="sobre-nosotros">
+    <section 
+      ref={sectionRef}
+      className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden" 
+      id="sobre-nosotros"
+    >
       <motion.div
+        style={{ opacity, scale }}
+        variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
-        className="relative z-10 max-w-4xl mx-auto text-center px-6"
+        viewport={{ once: true, amount: 0.3 }}
+        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32"
       >
-        <motion.div variants={itemVariants} className="mb-6">
-          <span className="text-sm font-semibold text-blue-600 tracking-widest uppercase">
-            Transformación
-          </span>
-        </motion.div>
+        {/* Section header */}
+        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
+          <motion.div variants={fadeInUp} className="mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium tracking-wide">
+              Transformación
+            </span>
+          </motion.div>
 
-        <motion.h2
-          variants={itemVariants}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight"
-        >
-          Tecnología que Funciona.<br />
-          <span className="text-blue-600">Crecimiento que Perdura.</span>
-        </motion.h2>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight text-gray-900 mb-6 leading-[1.1]"
+          >
+            Tecnología que funciona.{' '}
+            <span className="block mt-2 font-normal bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+              Crecimiento que perdura.
+            </span>
+          </motion.h2>
+        </div>
 
-        <motion.p
-          variants={itemVariants}
-          className="text-xl text-gray-700 leading-relaxed mb-12 max-w-2xl mx-auto"
-        >
-          Imagina un futuro donde tu infraestructura de tecnología no te detiene—te acelera hacia adelante. Donde la innovación es predecible, medible y vinculada directamente a tu línea de base.
-        </motion.p>
-
-        <motion.div
-          variants={itemVariants}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
-        >
-          <div className="bg-white p-8 rounded-2xl border border-blue-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">De la Incertidumbre</h3>
-            <ul className="space-y-3 text-gray-600">
-              <li>✗ Ciclos de implementación impredecibles</li>
-              <li>✗ Cuellos de botella de infraestructura</li>
-              <li>✗ Costos ocultos y complejidad</li>
+        {/* Comparison cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          {/* Before card */}
+          <motion.div
+            variants={fadeInUp}
+            className="bg-gray-50 rounded-3xl p-8 lg:p-10 border border-gray-200"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+                <X className="w-5 h-5 text-red-600" />
+              </div>
+              <h3 className="text-2xl font-light text-gray-900">De la incertidumbre</h3>
+            </div>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-gray-600 font-light">
+                <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                <span>Ciclos de implementación impredecibles</span>
+              </li>
+              <li className="flex items-start gap-3 text-gray-600 font-light">
+                <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                <span>Cuellos de botella de infraestructura</span>
+              </li>
+              <li className="flex items-start gap-3 text-gray-600 font-light">
+                <X className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                <span>Costos ocultos y complejidad</span>
+              </li>
             </ul>
-          </div>
-          <div className="bg-white p-8 rounded-2xl border border-blue-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">A la Previsibilidad</h3>
-            <ul className="space-y-3 text-gray-600">
-              <li>✓ Sistemas optimizados y confiables</li>
-              <li>✓ Ganancias de rendimiento medibles</li>
-              <li>✓ Asociaciones transparentes y responsables</li>
-            </ul>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        <motion.p
-          variants={itemVariants}
-          className="text-lg text-gray-600 max-w-3xl mx-auto"
-        >
-          Esta es la diferencia de Yieldge. No solo construimos software—ingenieramos crecimiento. Y medimos cada paso.
-        </motion.p>
+          {/* After card */}
+          <motion.div
+            variants={fadeInUp}
+            className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 lg:p-10 border border-blue-200"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                <Check className="w-5 h-5 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-light text-gray-900">A la previsibilidad</h3>
+            </div>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-gray-600 font-light">
+                <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                <span>Sistemas optimizados y confiables</span>
+              </li>
+              <li className="flex items-start gap-3 text-gray-600 font-light">
+                <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                <span>Ganancias de rendimiento medibles</span>
+              </li>
+              <li className="flex items-start gap-3 text-gray-600 font-light">
+                <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                <span>Asociaciones transparentes y responsables</span>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );

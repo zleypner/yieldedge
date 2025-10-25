@@ -1,209 +1,190 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import { useState, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, ChevronDown } from 'lucide-react';
+import { useRef } from 'react';
 
-// Container variants for stagger effect
-const containerVariants = {
-  hidden: { opacity: 0 },
+// Smooth fade-in animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
+    y: 0,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+      duration: 1,
+      ease: [0.25, 0.1, 0.25, 1] as const,
     },
   },
 };
 
-// Item variants for sequential reveal
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+const fadeIn = {
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.8 },
+    transition: {
+      duration: 1.2,
+      ease: 'easeOut' as const,
+    },
   },
 };
 
-// Letter animation variants
-const letterVariants = {
-  hidden: { opacity: 0, y: 10 },
+const staggerContainer = {
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
   },
 };
 
 export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const containerRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  });
 
-  // Parallax effect on mouse move
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    
-    setMousePosition({ x: x * 20, y: y * 20 });
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
+
+  const scrollToContent = () => {
+    const nextSection = document.querySelector('#servicios');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
-  // Text to split into letters
-  const headline = 'Precisión que impulsa el crecimiento.';
-
   return (
-    <div
-      ref={containerRef}
-      onMouseMove={handleMouseMove}
+    <section
+      ref={heroRef}
       id="hero"
-      className="relative min-h-screen bg-gradient-to-br from-white via-blue-50 to-white overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden"
+      role="banner"
     >
-      {/* Animated background SVG - represents data lines organizing */}
-      <svg
-        className="absolute inset-0 w-full h-full opacity-10"
-        viewBox="0 0 1200 800"
-        preserveAspectRatio="xMidYMid slice"
-      >
-        <motion.path
-          d="M0 400 Q300 200 600 400 T1200 400"
-          stroke="#2563EB"
-          strokeWidth="2"
-          fill="none"
-          animate={{ strokeDashoffset: [0, -1000] }}
-          transition={{ duration: 20, repeat: Infinity, repeatType: 'loop' }}
-          strokeDasharray="1000"
-        />
-      </svg>
-
-      {/* Parallax background effect */}
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-white to-white" />
+      
+      {/* Soft radial glow - Apple style */}
       <motion.div
-        className="absolute inset-0 opacity-20 pointer-events-none"
-        animate={{
-          x: mousePosition.x,
-          y: mousePosition.y,
-        }}
-        transition={{ type: 'spring', stiffness: 100, damping: 30 }}
-        style={{
-          background: 'radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 70%)',
-        }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2, ease: 'easeOut' }}
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none"
       />
 
-      {/* Main Content */}
+      {/* Main content container */}
       <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 flex flex-col justify-center items-center text-center min-h-screen pt-20 sm:pt-24 pb-16 sm:pb-20 px-4 sm:px-6"
+        style={{ opacity, scale }}
+        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:pt-32 sm:pb-20"
       >
-        {/* Grid Layout */}
-        <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mx-[5%] px-4 sm:px-6">
-            
-            {/* Capsule 1 - Top Full Width: Tagline */}
-            <motion.div
-              variants={itemVariants}
-              className="md:col-span-2 bg-gradient-to-br from-white to-blue-50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-blue-200 hover:border-blue-400 transition-colors duration-300"
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-center text-center"
+        >
+          {/* Eyebrow text - minimalist badge */}
+          <motion.div
+            variants={fadeIn}
+            className="mb-6 sm:mb-8"
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs sm:text-sm font-medium tracking-wide">
+              Innovación con retorno
+            </span>
+          </motion.div>
+
+          {/* Main headline - Apple style typography */}
+          <motion.h1
+            variants={fadeInUp}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extralight tracking-tight text-gray-900 mb-6 sm:mb-8 leading-[1.1] max-w-5xl"
+          >
+            Precisión que impulsa{' '}
+            <span className="block mt-2 font-light bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+              el crecimiento
+            </span>
+          </motion.h1>
+
+          {/* Subtitle - clean and minimal */}
+          <motion.p
+            variants={fadeInUp}
+            className="text-lg sm:text-xl md:text-2xl font-light text-gray-600 mb-10 sm:mb-14 max-w-3xl leading-relaxed"
+          >
+            Diseñamos sistemas que generan impacto real, optimizan tu infraestructura
+            y escalan tu rendimiento con{' '}
+            <span className="text-gray-900 font-normal">resultados medibles</span>.
+          </motion.p>
+
+          {/* CTA buttons - Apple style */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full sm:w-auto mb-16 sm:mb-20"
+          >
+            {/* Primary CTA */}
+            <motion.a
+              href="#cta"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative w-full sm:w-auto px-8 py-4 bg-blue-600 text-white text-base font-medium rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30"
+              aria-label="Agenda una consulta gratuita"
             >
-              <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 mb-3">
-                Yieldge
-              </p>
-              <span className="text-sm sm:text-base md:text-lg font-semibold text-blue-600 tracking-widest uppercase">
-                — Innovación con retorno —
+              <span className="flex items-center justify-center gap-2">
+                Agenda una consulta
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform duration-300" />
               </span>
-            </motion.div>
+            </motion.a>
 
-            {/* Capsule 2 - Full Width: Headline */}
-            <motion.div
-              variants={itemVariants}
-              className="md:col-span-2 bg-gradient-to-br from-white to-blue-50 backdrop-blur-sm rounded-2xl p-8 sm:p-12 border border-blue-200 hover:border-blue-400 transition-colors duration-300"
+            {/* Secondary CTA */}
+            <motion.a
+              href="#resultados"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full sm:w-auto px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-900 text-base font-medium rounded-full hover:bg-gray-50 transition-all duration-300 border border-gray-200 hover:border-gray-300"
             >
-              <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-center text-gray-900">
-                <span className="inline-block">
-                  {headline.split('').map((letter, index) => (
-                    <motion.span
-                      key={index}
-                      variants={letterVariants}
-                      initial="hidden"
-                      animate="visible"
-                      transition={{ delay: 0.5 + index * 0.05 }}
-                      className="text-gray-900 inline"
-                    >
-                      {letter}
-                    </motion.span>
-                  ))}
-                </span>
-                <br />
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.2, duration: 0.8 }}
-                  className="text-blue-600"
-                >
-                  Medible.
-                </motion.span>
-              </motion.h1>
-            </motion.div>
+              Ver casos de éxito
+            </motion.a>
+          </motion.div>
 
-            {/* Capsule 3 - Left: Subheadline */}
-            <motion.div
-              variants={itemVariants}
-              className="bg-gradient-to-br from-white to-blue-50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-blue-200 hover:border-blue-400 transition-colors duration-300 flex flex-col justify-center"
-            >
-              <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-center">
-                En Yieldge, no solo desarrollamos software.{' '}
-                <span className="text-blue-600 font-semibold">
-                  Diseñamos sistemas que generan impacto real
-                </span>
-                , optimizan tu infraestructura y escalan tu rendimiento.
-              </p>
-            </motion.div>
-
-            {/* Capsule 4 - Right: CTA Buttons */}
-            <motion.div
-              variants={itemVariants}
-              className="bg-gradient-to-br from-white to-blue-50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-blue-200 hover:border-blue-400 transition-colors duration-300 flex flex-col justify-center gap-3 sm:gap-4"
-            >
-              {/* Primary CTA */}
-              <motion.button
-                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(37, 99, 235, 0.5)' }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative w-full px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-bold rounded-lg text-sm sm:text-base transition-all duration-300 overflow-hidden"
-              >
-                <span className="flex items-center justify-center gap-2">
-                  Agenda una llamada
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <motion.div
-                  className="absolute inset-0 bg-blue-700 -z-10 rounded-lg"
-                  animate={{ scaleX: [0, 1, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, repeatType: 'loop' }}
-                  style={{ originX: 0 }}
-                />
-              </motion.button>
-
-              {/* Secondary CTA */}
-              <motion.button
-                whileHover={{ scale: 1.05, borderColor: '#2563EB' }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-300 text-gray-900 font-semibold rounded-lg text-sm sm:text-base hover:border-blue-600 transition-colors duration-300"
-              >
-                Ver casos de éxito
-              </motion.button>
-            </motion.div>
-          </div>
+          {/* Trust indicators - minimal design */}
+          <motion.div
+            variants={fadeIn}
+            className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 text-sm text-gray-500"
+          >
+            <div className="flex flex-col items-center">
+              <span className="text-2xl sm:text-3xl font-extralight text-gray-900">99.9%</span>
+              <span className="text-xs sm:text-sm mt-1">Uptime</span>
+            </div>
+            <div className="w-px h-8 bg-gray-200" />
+            <div className="flex flex-col items-center">
+              <span className="text-2xl sm:text-3xl font-extralight text-gray-900">&lt;100ms</span>
+              <span className="text-xs sm:text-sm mt-1">Latencia</span>
+            </div>
+            <div className="w-px h-8 bg-gray-200" />
+            <div className="flex flex-col items-center">
+              <span className="text-2xl sm:text-3xl font-extralight text-gray-900">24/7</span>
+              <span className="text-xs sm:text-sm mt-1">Soporte</span>
+            </div>
+          </motion.div>
+        </motion.div>
       </motion.div>
 
-      {/* Bottom accent glow */}
-      <motion.div
-        animate={{
-          y: [0, -20, 0],
-          opacity: [0.3, 0.6, 0.3],
-        }}
-        transition={{ duration: 4, repeat: Infinity }}
-        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"
-      />
-    </div>
+      {/* Scroll indicator - Apple style */}
+      <motion.button
+        onClick={scrollToContent}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2 rounded-full hover:bg-gray-100 transition-colors duration-300 group"
+        aria-label="Desplazarse hacia abajo"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <ChevronDown className="w-6 h-6 text-gray-400 group-hover:text-gray-600 transition-colors" />
+        </motion.div>
+      </motion.button>
+    </section>
   );
 }
