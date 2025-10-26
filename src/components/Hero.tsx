@@ -77,7 +77,8 @@ export default function Hero() {
       {/* Main content container */}
       <motion.div
         style={{ opacity, scale }}
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:pt-32 sm:pb-20"
+        // 👇 Updated spacing: more space below (Apple-style)
+        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32 sm:pt-32 sm:pb-40"
       >
         <motion.div
           variants={staggerContainer}
@@ -121,19 +122,30 @@ export default function Hero() {
             variants={fadeInUp}
             className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full sm:w-auto mb-16 sm:mb-20"
           >
-            {/* Primary CTA */}
-            <motion.a
-              href="#cta"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="group relative w-full sm:w-auto px-8 py-4 bg-blue-600 text-white text-base font-medium rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30"
-              aria-label="Agenda una consulta gratuita"
-            >
-              <span className="flex items-center justify-center gap-2">
-                Agenda una consulta
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform duration-300" />
-              </span>
-            </motion.a>
+           {/* Primary CTA */}
+<motion.a
+  href="https://calendly.com/anwar-softwaredev"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+  className="group relative w-full sm:w-auto 
+             px-10 py-7 sm:px-12 sm:py-8 
+             text-lg sm:text-xl font-semibold leading-none
+             bg-blue-600 text-white 
+             rounded-full 
+             hover:bg-blue-700 
+             transition-all duration-300 
+             shadow-lg shadow-blue-600/20 
+             hover:shadow-xl hover:shadow-blue-600/30"
+  aria-label="Agenda tu llamada gratuita"
+>
+  <span className="flex items-center justify-center gap-3">
+    Agenda tu llamada
+    <ArrowRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform duration-300" />
+  </span>
+</motion.a>
+
 
             {/* Secondary CTA */}
             <motion.a
@@ -144,27 +156,6 @@ export default function Hero() {
             >
               Ver casos de éxito
             </motion.a>
-          </motion.div>
-
-          {/* Trust indicators - minimal design */}
-          <motion.div
-            variants={fadeIn}
-            className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 text-sm text-gray-500"
-          >
-            <div className="flex flex-col items-center">
-              <span className="text-2xl sm:text-3xl font-extralight text-gray-900">99.9%</span>
-              <span className="text-xs sm:text-sm mt-1">Uptime</span>
-            </div>
-            <div className="w-px h-8 bg-gray-200" />
-            <div className="flex flex-col items-center">
-              <span className="text-2xl sm:text-3xl font-extralight text-gray-900">&lt;100ms</span>
-              <span className="text-xs sm:text-sm mt-1">Latencia</span>
-            </div>
-            <div className="w-px h-8 bg-gray-200" />
-            <div className="flex flex-col items-center">
-              <span className="text-2xl sm:text-3xl font-extralight text-gray-900">24/7</span>
-              <span className="text-xs sm:text-sm mt-1">Soporte</span>
-            </div>
           </motion.div>
         </motion.div>
       </motion.div>

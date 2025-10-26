@@ -6,7 +6,6 @@ import Problem from '@/components/Problem';
 import Process from '@/components/Process';
 import CaseStudies from '@/components/CaseStudies';
 import Vision from '@/components/Vision';
-import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -18,7 +17,6 @@ export default function Home() {
       <Process />
       <CaseStudies />
       <Vision />
-      <CallToAction />
       <Footer />
     </div>
   );

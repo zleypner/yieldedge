@@ -149,11 +149,12 @@ export default function Footer() {
                 ¿Listo para optimizar tu infraestructura?
               </p>
               <motion.a
-                href="#cta"
-                onClick={(e) => handleLinkClick(e, '#cta')}
+                href="https://calendly.com/anwar-softwaredev"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-block w-full sm:w-auto px-6 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-md hover:shadow-lg text-center"
+                className="inline-block w-full sm:w-auto px-8 py-4 sm:px-10 sm:py-5 bg-blue-600 text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30 text-center"
               >
                 Agenda una consulta
               </motion.a>

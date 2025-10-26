@@ -55,7 +55,7 @@ export default function ProblemSection() {
           {/* Headline */}
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight text-gray-900 mb-8 leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight text-gray-900 mb-8 leading-[1.1] text-center"
           >
             La mayoría de las empresas no tienen{' '}
             <span className="font-light">un problema de tecnología.</span>
@@ -68,12 +68,30 @@ export default function ProblemSection() {
           {/* Subtitle */}
           <motion.p
             variants={fadeInUp}
-            className="text-xl sm:text-2xl font-light text-gray-600 leading-relaxed max-w-3xl mx-auto"
+            className="text-xl sm:text-2xl font-light text-gray-600 leading-relaxed max-w-3xl mx-auto text-center mb-12"
           >
             En Yieldge transformamos cada línea de código en una herramienta de
             crecimiento medible. Tecnología que no solo funciona, sino que{' '}
             <span className="text-gray-900 font-normal">rinde</span>.
           </motion.p>
+
+          {/* CTA */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex justify-center"
+          >
+            <motion.a
+              href="https://calendly.com/anwar-softwaredev"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-block px-8 py-4 sm:px-10 sm:py-5 bg-blue-600 text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30"
+              aria-label="Agenda una consulta gratuita"
+            >
+              Hablemos de tu proyecto
+            </motion.a>
+          </motion.div>
         </div>
       </motion.div>
     </section>
