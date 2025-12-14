@@ -9,9 +9,3 @@ module.exports = {
   // Theme customizations are now done in CSS using @theme directives
   // See src/app/globals.css for theme configuration
 }
-
-
-
-
-
-

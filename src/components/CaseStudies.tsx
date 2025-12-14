@@ -76,7 +76,7 @@ interface CaseStudyCardProps {
   index: number;
 }
 
-function CaseStudyCard({ caseStudy, index }: CaseStudyCardProps) {
+function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
