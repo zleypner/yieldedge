@@ -110,6 +110,7 @@ function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             quality={90}
+            loading="lazy"
             className="object-cover"
           />
           {/* Category badge */}
@@ -184,7 +185,7 @@ export default function CaseStudies() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1, margin: '0px 0px -100px 0px' }}
         >
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16 sm:mb-20">

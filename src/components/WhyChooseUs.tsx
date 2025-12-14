@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1, margin: '0px 0px -100px 0px' }}
         >
         {/* Main Statement */}
         <div className="max-w-4xl mx-auto text-center mb-20">
@@ -89,6 +89,7 @@ export default function WhyChooseUs() {
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 quality={90}
+                loading="lazy"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent" />

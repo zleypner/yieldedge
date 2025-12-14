@@ -24,7 +24,7 @@ export default function FinalCTA() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1, margin: '0px 0px -100px 0px' }}
         >
         <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl overflow-hidden shadow-2xl">
           <div className="grid lg:grid-cols-2">
@@ -84,6 +84,7 @@ export default function FinalCTA() {
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 quality={90}
+                loading="lazy"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-l from-transparent to-blue-600/20" />

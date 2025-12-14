@@ -72,7 +72,7 @@ export default function Process() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1, margin: '0px 0px -100px 0px' }}
         >
         {/* Section Header */}
         <div className="max-w-3xl mb-20">
@@ -124,6 +124,7 @@ export default function Process() {
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       quality={90}
+                      loading="lazy"
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent" />
