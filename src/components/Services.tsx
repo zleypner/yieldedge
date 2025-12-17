@@ -71,7 +71,7 @@ export default function Services({ content = homepageContent.services }: Service
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {content.services.map((service, index) => {
-            const IconComponent = iconMap[service.icon] || Globe;
+            const IconComponent = iconMap[service.icon] || iconMap.Globe;
             return (
               <motion.div
                 key={index}
