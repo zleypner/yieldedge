@@ -38,8 +38,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <motion.a
-            href="#hero"
-            onClick={(e) => handleNavClick(e, '#hero')}
+            href="/yieldedge/home"
             className="flex items-center cursor-pointer"
           >
             <div className="h-10 w-auto relative flex-shrink-0">
