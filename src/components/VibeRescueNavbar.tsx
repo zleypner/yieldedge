@@ -2,17 +2,16 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import Image from 'next/image';
+import { Menu, X, Zap } from 'lucide-react';
 
-export default function Navbar() {
+export default function VibeRescueNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Solutions', href: '#servicios' },
+    { label: 'Services', href: '#servicios' },
     { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Case Studies', href: '#case-studies' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'Pricing', href: '#pricing' },
+    { label: 'Contact', href: '#contact' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -32,25 +31,23 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed w-full top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-gray-200"
+      className="fixed w-full top-0 z-50 backdrop-blur-xl border-b"
+      style={{ 
+        backgroundColor: 'rgba(15, 23, 42, 0.8)',
+        borderColor: 'rgba(255, 255, 255, 0.1)'
+      }}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <motion.a
-            href="/yieldedge/home"
+            href="/viberescue"
             className="flex items-center cursor-pointer"
           >
-            <div className="h-10 w-auto relative flex-shrink-0">
-              <Image 
-                src="/brand/logo-main.png" 
-                alt="Yieldge - Technology that Performs" 
-                width={160}
-                height={40}
-                className="object-contain"
-                priority
-              />
-            </div>
+            <span className="text-2xl font-bold">
+              <span style={{ color: 'hsl(173, 80%, 40%)' }}>Vibe</span>
+              <span className="text-white">Rescue</span>
+            </span>
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -60,7 +57,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-base font-medium cursor-pointer"
+                className="text-white hover:opacity-80 transition-opacity duration-200 text-base font-medium cursor-pointer"
               >
                 {link.label}
               </a>
@@ -73,21 +70,23 @@ export default function Navbar() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 text-sm shadow-md hover:shadow-lg"
+              className="px-6 py-3 text-white font-semibold rounded-full transition-all duration-300 text-sm shadow-md hover:shadow-lg flex items-center gap-2"
+              style={{ backgroundColor: 'hsl(25, 95%, 53%)' }}
             >
-              Get Initial Review
+              <Zap className="w-4 h-4" />
+              Emergency Help
             </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
           >
             {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-gray-700" />
+              <X className="w-6 h-6 text-white" />
             ) : (
-              <Menu className="w-6 h-6 text-gray-700" />
+              <Menu className="w-6 h-6 text-white" />
             )}
           </button>
         </div>
@@ -99,7 +98,11 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="lg:hidden bg-white border-t border-gray-200"
+          className="lg:hidden border-t"
+          style={{ 
+            backgroundColor: 'rgba(15, 23, 42, 0.95)',
+            borderColor: 'rgba(255, 255, 255, 0.1)'
+          }}
         >
           <div className="px-6 py-4 space-y-3">
             {navLinks.map((link) => (
@@ -107,7 +110,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="block text-gray-600 hover:text-gray-900 transition-colors text-base font-medium py-2 cursor-pointer"
+                className="block text-white hover:opacity-80 transition-opacity text-base font-medium py-2 cursor-pointer"
               >
                 {link.label}
               </a>
@@ -116,9 +119,11 @@ export default function Navbar() {
               href="https://calendly.com/anwar-softwaredev"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 text-center shadow-md"
+              className="block w-full px-6 py-3 text-white font-semibold rounded-full transition-all duration-300 text-center shadow-md flex items-center justify-center gap-2"
+              style={{ backgroundColor: 'hsl(25, 95%, 53%)' }}
             >
-              Get Initial Review
+              <Zap className="w-4 h-4" />
+              Emergency Help
             </a>
           </div>
         </motion.div>
@@ -126,3 +131,4 @@ export default function Navbar() {
     </motion.nav>
   );
 }
+
