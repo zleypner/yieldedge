@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, MessageCircle, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import { FinalCTAContent, homepageContent } from '@/lib/content';
@@ -58,8 +58,8 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
                   ))}
                 </ul>
 
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                {/* CTA Button */}
+                <div className="mb-6">
                   <motion.a
                     href="https://calendly.com/anwar-softwaredev"
                     target="_blank"
@@ -72,37 +72,13 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
                     {content.ctaText}
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </motion.a>
-                  {content.ctaSubtext && (
-                    <motion.a
-                      href="https://calendly.com/anwar-softwaredev"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center justify-center px-8 py-5 text-lg font-semibold rounded-full border-2 transition-all duration-300"
-                      style={{ borderColor: 'hsl(173, 80%, 40%)', color: 'hsl(173, 80%, 40%)', backgroundColor: 'transparent' }}
-                    >
-                      {content.ctaSubtext}
-                    </motion.a>
-                  )}
                 </div>
 
-                <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-blue-100">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
-                    <span>Immediate availability</span>
+                {content.ctaSubtext && (
+                  <div className="mt-6 text-sm text-blue-100">
+                    <p>{content.ctaSubtext}</p>
                   </div>
-                  <span className="hidden sm:inline">•</span>
-                  <div className="flex items-center gap-2">
-                    <MessageCircle className="w-4 h-4" />
-                    <span>No commitment</span>
-                  </div>
-                  <span className="hidden sm:inline">•</span>
-                  <div className="flex items-center gap-2">
-                    <Zap className="w-4 h-4" />
-                    <span>Clear results</span>
-                  </div>
-                </div>
+                )}
               </motion.div>
             </div>
 

@@ -7,23 +7,25 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yieldge.com';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Yieldge - Technology that Performs",
+    default: "Yieldge | Technology Solutions & Offshore Development",
     template: "%s | Yieldge"
   },
-  description: "Transform businesses with modern websites, AI automation, and scalable systems that deliver measurable results. Technology solutions for real estate: lead generation, property management, and market analysis.",
+  description: "Leading provider of technology solutions with 15+ years of expertise. Delivering software development, security services, technology consulting and offshore teams across the Americas.",
   keywords: [
-    "AI automation real estate",
-    "real estate technology",
-    "automated lead generation",
-    "property management",
-    "real estate market analysis",
-    "scalable real estate systems",
-    "cloud infrastructure real estate",
-    "property management software",
-    "real estate technology solutions",
-    "real estate automation",
-    "real estate CRM",
-    "property management automation"
+    "offshore development",
+    "technology solutions",
+    "software engineering",
+    "security services",
+    "staff augmentation",
+    "cloud solutions",
+    "technology consulting",
+    "QA automation",
+    "mobile app development",
+    "web development",
+    "analytics and insights",
+    "tailored software development",
+    "nearshore development",
+    "digital transformation"
   ],
   authors: [{ name: "Yieldge" }],
   creator: "Yieldge",
@@ -42,8 +44,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteUrl,
     siteName: 'Yieldge',
-    title: "Yieldge - Technology that Performs",
-    description: "Modern websites, AI automation, and scalable systems to drive your growth. Specialized technology solutions for the real estate industry.",
+    title: "Yieldge | Technology Solutions & Offshore Development",
+    description: "Leading provider of technology solutions with 15+ years of expertise. Delivering software development, security services, technology consulting and offshore teams across the Americas.",
     images: [
       {
         url: '/assets/featured.jpg',
@@ -55,8 +57,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Yieldge - Technology that Performs",
-    description: "Modern websites, AI automation, and scalable systems to drive your growth",
+    title: "Yieldge | Technology Solutions & Offshore Development",
+    description: "Leading provider of technology solutions with 15+ years of expertise. Delivering software development, security services, technology consulting and offshore teams across the Americas.",
     images: ['/assets/featured.jpg'],
     creator: '@yieldge',
   },
@@ -89,7 +91,7 @@ export default function RootLayout({
     "name": "Yieldge",
     "url": siteUrl,
     "logo": `${siteUrl}/brand/logo-main.png`,
-    "description": "Technology partner specialized in web services, cloud infrastructure, and AI automation for the real-estate industry.",
+      "description": "Technology partner specialized in web services, cloud infrastructure, and offshore development with 15+ years of expertise.",
     "sameAs": [
       "https://twitter.com/yieldge",
       "https://www.linkedin.com/company/yieldge",
@@ -98,7 +100,7 @@ export default function RootLayout({
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
-      "email": "contact@yieldge.com",
+      "email": "info@yieldge.com",
       "availableLanguage": ["Spanish", "English"]
     }
   };
@@ -122,7 +124,7 @@ export default function RootLayout({
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Real Estate Technology Solutions",
+    "serviceType": "Technology Solutions & Offshore Development",
     "provider": {
       "@type": "Organization",
       "name": "Yieldge"
@@ -130,46 +132,78 @@ export default function RootLayout({
     "areaServed": "Worldwide",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Real Estate Technology Services",
+      "name": "Technology Solutions & Offshore Development Services",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Automated Lead Generation & Qualification",
-            "description": "Capture and qualify leads 24/7 so you only talk to real prospects."
+            "name": "QA and Test Automation",
+            "description": "Comprehensive quality assurance and automated testing services to ensure your software meets the highest standards"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Document & Data Handling Automation",
-            "description": "Contracts, valuations, leases, and portfolios — organized, searchable, and analyzed automatically."
+            "name": "Security Services",
+            "description": "Advanced cybersecurity solutions and threat protection to safeguard your digital assets"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Market Analytics & Valuation Insights",
-            "description": "Get predictive pricing and investment guidance based on real data."
+            "name": "Technology Consulting",
+            "description": "Strategic technology guidance to drive digital transformation and business growth"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Property & Tenant Management",
-            "description": "Rent collection, maintenance scheduling, tenant communications, lease renewals — automated reliably."
+            "name": "Mobile & Web Apps",
+            "description": "Custom mobile and web application development for exceptional user experiences"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Scalable Web & Cloud Infrastructure",
-            "description": "Secure, reliable, and customized for real-estate businesses ready to grow."
+            "name": "Staff Augmentation",
+            "description": "Access top technical talent to scale your team quickly and efficiently"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Analytics and Insights",
+            "description": "Data-driven insights and analytics solutions to power informed business decisions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cloud Solutions",
+            "description": "Scalable cloud infrastructure and migration services for modern businesses"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Offshore Development",
+            "description": "Nearshore software development teams delivering quality and value"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Tailored Software",
+            "description": "Custom software solutions designed specifically for your unique business needs"
           }
         }
       ]

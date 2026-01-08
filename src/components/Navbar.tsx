@@ -1,31 +1,43 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false);
 
-  const navLinks = [
-    { label: 'Solutions', href: '#servicios' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Case Studies', href: '#case-studies' },
-    { label: 'FAQ', href: '#faq' },
+  const solutionsLinks = [
+    { label: 'What We Offer', href: '/solutions' },
+    { label: 'QA and Test Automation', href: '/solutions#qa-automation' },
+    { label: 'Security Services', href: '/solutions#security' },
+    { label: 'Technology Consulting', href: '/solutions#consulting' },
+    { label: 'Mobile & Web Apps', href: '/solutions#mobile-web' },
+    { label: 'Staff Augmentation', href: '/solutions#staff-augmentation' },
+    { label: 'Analytics and Insights', href: '/solutions#analytics' },
+    { label: 'Cloud Solutions', href: '/solutions#cloud' },
+    { label: 'Offshore Development', href: '/solutions#offshore' },
+    { label: 'Tailored Software', href: '/solutions#tailored-software' },
   ];
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setMobileMenuOpen(false);
+  const companyLinks = [
+    { label: 'About Yieldge', href: '/company#about' },
+    { label: 'Leadership Team', href: '/company#leadership' },
+    { label: 'Diversity and Inclusion', href: '/company#diversity' },
+    { label: 'Development Program', href: '/company#development-program' },
+  ];
 
-    const sectionId = href.substring(1);
-    const element = document.getElementById(sectionId) || document.querySelector(href);
+  const navLinks = [
+    { label: 'Home', href: '/' },
+    { label: 'Careers', href: '/careers' },
+    { label: 'Get in Touch', href: '/get-in-touch' },
+  ];
 
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <motion.nav
@@ -38,7 +50,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <motion.a
-            href="/yieldedge/home"
+            href="/"
             className="flex items-center cursor-pointer"
           >
             <div className="h-10 w-auto relative flex-shrink-0">
@@ -54,12 +66,75 @@ export default function Navbar() {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
+            {/* Solutions Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setSolutionsOpen(true)}
+              onMouseLeave={() => setSolutionsOpen(false)}
+            >
+              <button className="flex items-center gap-1 text-gray-600 hover:text-gray-900 transition-colors duration-200 text-base font-medium cursor-pointer">
+                Solutions
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {solutionsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 py-2 z-50"
+                  >
+                    {solutionsLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        className="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Company Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setCompanyOpen(true)}
+              onMouseLeave={() => setCompanyOpen(false)}
+            >
+              <button className="flex items-center gap-1 text-gray-600 hover:text-gray-900 transition-colors duration-200 text-base font-medium cursor-pointer">
+                Company
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${companyOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {companyOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 py-2 z-50"
+                  >
+                    {companyLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        className="block px-4 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors text-sm"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-base font-medium cursor-pointer"
               >
                 {link.label}
@@ -75,7 +150,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.98 }}
               className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 text-sm shadow-md hover:shadow-lg"
             >
-              Get Initial Review
+              Get in Touch
             </motion.a>
           </div>
 
@@ -94,35 +169,89 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="lg:hidden bg-white border-t border-gray-200"
-        >
-          <div className="px-6 py-4 space-y-3">
-            {navLinks.map((link) => (
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="lg:hidden bg-white border-t border-gray-200"
+          >
+            <div className="px-6 py-4 space-y-3">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-gray-600 hover:text-gray-900 transition-colors text-base font-medium py-2 cursor-pointer"
+                >
+                  {link.label}
+                </a>
+              ))}
+              
+              {/* Solutions Mobile Dropdown */}
+              <div>
+                <button
+                  onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+                  className="flex items-center justify-between w-full text-gray-600 hover:text-gray-900 transition-colors text-base font-medium py-2 cursor-pointer"
+                >
+                  Solutions
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileSolutionsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileSolutionsOpen && (
+                  <div className="pl-4 mt-2 space-y-2">
+                    {solutionsLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block text-gray-500 hover:text-gray-900 transition-colors text-sm py-1"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Company Mobile Dropdown */}
+              <div>
+                <button
+                  onClick={() => setMobileCompanyOpen(!mobileCompanyOpen)}
+                  className="flex items-center justify-between w-full text-gray-600 hover:text-gray-900 transition-colors text-base font-medium py-2 cursor-pointer"
+                >
+                  Company
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileCompanyOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {mobileCompanyOpen && (
+                  <div className="pl-4 mt-2 space-y-2">
+                    {companyLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block text-gray-500 hover:text-gray-900 transition-colors text-sm py-1"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="block text-gray-600 hover:text-gray-900 transition-colors text-base font-medium py-2 cursor-pointer"
+                href="https://calendly.com/anwar-softwaredev"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 text-center shadow-md"
               >
-                {link.label}
+                Get in Touch
               </a>
-            ))}
-            <a
-              href="https://calendly.com/anwar-softwaredev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 text-center shadow-md"
-            >
-              Get Initial Review
-            </a>
-          </div>
-        </motion.div>
-      )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }

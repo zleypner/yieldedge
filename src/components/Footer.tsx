@@ -7,53 +7,63 @@ import Image from 'next/image';
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const navLinks = [
-    { text: 'Solutions', href: '#servicios' },
-    { text: 'How It Works', href: '#how-it-works' },
-    { text: 'Case Studies', href: '#case-studies' },
-    { text: 'FAQ', href: '#faq' },
+  const solutionsLinks = [
+    { text: 'QA and Test Automation', href: '/solutions#qa-automation' },
+    { text: 'Security Services', href: '/solutions#security' },
+    { text: 'Technology Consulting', href: '/solutions#consulting' },
+    { text: 'Mobile & Web Apps', href: '/solutions#mobile-web' },
+    { text: 'Staff Augmentation', href: '/solutions#staff-augmentation' },
+    { text: 'Analytics and Insights', href: '/solutions#analytics' },
+    { text: 'Cloud Solutions', href: '/solutions#cloud' },
+    { text: 'Offshore Development', href: '/solutions#offshore' },
+    { text: 'Tailored Software', href: '/solutions#tailored-software' },
+  ];
+
+  const companyLinks = [
+    { text: 'About Yieldge', href: '/company#about' },
+    { text: 'Leadership Team', href: '/company#leadership' },
+    { text: 'Diversity and Inclusion', href: '/company#diversity' },
+    { text: 'Careers', href: '/careers' },
+    { text: 'Get in Touch', href: '/get-in-touch' },
+    { text: 'Report Concerns', href: '/report-concerns' },
+  ];
+
+  const legalLinks = [
+    { text: 'Privacy Policy', href: '/privacy-policy' },
+    { text: 'Terms and Conditions', href: '/terms' },
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Mail, href: 'mailto:contact@yieldge.com', label: 'Email' },
+    { icon: Twitter, href: 'https://twitter.com/yieldge', label: 'Twitter' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/yieldge', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/yieldge', label: 'GitHub' },
+    { icon: Mail, href: 'mailto:info@yieldge.com', label: 'Email' },
   ];
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
 
   return (
     <footer className="relative bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20">
         {/* Main Content */}
-        <div className="grid md:grid-cols-3 gap-16 lg:gap-20 mb-16">
+        <div className="grid md:grid-cols-4 gap-12 lg:gap-16 mb-16">
           {/* Brand */}
-          <div>
+          <div className="md:col-span-1">
             <div className="mb-6">
               <div className="h-10 w-auto relative">
                 <Image
                   src="/brand/logo-main.png"
-                  alt="Yieldge - Technology that Performs"
+                  alt="Yieldge - Technology Solutions & Offshore Development"
                   width={160}
                   height={40}
                   className="object-contain"
                 />
               </div>
             </div>
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-gray-600 leading-relaxed mb-8 text-sm">
               Technology partner specialized in web services, cloud infrastructure, and AI automation for the real-estate industry.
             </p>
 
@@ -75,18 +85,17 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Solutions Links */}
           <div>
             <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wide mb-6">
-              Navigation
+              Solutions
             </h3>
-            <ul className="space-y-4">
-              {navLinks.map((link) => (
+            <ul className="space-y-3">
+              {solutionsLinks.map((link) => (
                 <li key={link.text}>
                   <a
                     href={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
                   >
                     {link.text}
                   </a>
@@ -95,12 +104,31 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Company Links */}
+          <div>
+            <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wide mb-6">
+              Company
+            </h3>
+            <ul className="space-y-3">
+              {companyLinks.map((link) => (
+                <li key={link.text}>
+                  <a
+                    href={link.href}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact & Legal */}
           <div>
             <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wide mb-6">
               Contact
             </h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-gray-600 mb-6 leading-relaxed text-sm">
               Ready to streamline your real-estate business?
             </p>
             <motion.a
@@ -109,10 +137,34 @@ export default function Footer() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-md text-sm"
+              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-md text-sm mb-8"
             >
               Schedule a Consultation
             </motion.a>
+
+            {/* Legal Links */}
+            <div className="mt-8">
+              <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wide mb-6">
+                Legal
+              </h3>
+              <ul className="space-y-3">
+                {legalLinks.map((link) => (
+                  <li key={link.text}>
+                    <a
+                      href={link.href}
+                      className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                    >
+                      {link.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="mt-8 space-y-2 text-sm text-gray-600">
+              <p><strong>Email:</strong> <a href="mailto:info@yieldge.com" className="hover:text-blue-600">info@yieldge.com</a></p>
+            </div>
           </div>
         </div>
 

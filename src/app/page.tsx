@@ -13,6 +13,10 @@ const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs'), {
   loading: () => <div className="min-h-screen" />,
 });
 
+const InsightsUpdates = dynamic(() => import('@/components/InsightsUpdates'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+
 const Process = dynamic(() => import('@/components/Process'), {
   loading: () => <div className="min-h-screen" />,
 });
@@ -43,6 +47,7 @@ export default function Home() {
       <main className="space-y-20 sm:space-y-24 lg:space-y-32">
         <Services />
         <WhyChooseUs />
+        <InsightsUpdates />
         <Process />
         <CaseStudies />
         <FAQ />

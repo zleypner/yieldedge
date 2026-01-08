@@ -1,15 +1,17 @@
 // Content configuration for homepage and yieldedge page
 // Homepage uses default values, yieldedge page overrides with general business copy
 
+export interface HeroSlide {
+  heading: string;
+  subheading: string;
+  description: string;
+  ctaText: string;
+  ctaLink: string;
+  backgroundImage?: string;
+}
+
 export interface HeroContent {
-  badge: string;
-  headline: string;
-  headlineHighlight: string;
-  subheadline: string;
-  primaryCTA: string;
-  secondaryCTA: string;
-  heroImage: string;
-  heroImageAlt: string;
+  slides: HeroSlide[];
 }
 
 export interface Service {
@@ -117,87 +119,133 @@ export interface PageContent {
   finalCTA: FinalCTAContent;
 }
 
-// Homepage content (Real Estate focused)
+// Homepage content (Technology Solutions & Offshore Development)
 export const homepageContent: PageContent = {
   hero: {
-    badge: 'Real-Estate Technology Partner',
-    headline: 'Unlock Real-Estate Profits with',
-    headlineHighlight: 'Smart Web, Cloud & AI',
-    subheadline: 'Generate qualified leads, streamline property management, and make data-driven investment decisions — all in one platform.',
-    primaryCTA: 'Get Your Initial Review',
-    secondaryCTA: 'See How It Works',
-    heroImage: '/assets/img1.jpg',
-    heroImageAlt: 'Modern technology workspace',
+    slides: [
+      {
+        heading: 'DIGITAL TRANSFORMATION',
+        subheading: 'Transform your business with cutting-edge expertise',
+        description: 'Our approach combines nearshore excellence with world-class technical talent. From enterprise solutions to seamless integrations, our professionals align with your vision and goals, ensuring your organization leads with the latest technological innovations!',
+        ctaText: 'EXPLORE OUR SOLUTIONS',
+        ctaLink: '/solutions',
+        backgroundImage: '/assets/img1.jpg',
+      },
+      {
+        heading: 'PROVEN EXCELLENCE',
+        subheading: 'More than 15 years of innovation',
+        description: 'With over 15+ years serving the global technology landscape, Yieldge has established itself as a trusted partner in digital transformation. We\'ve empowered countless organizations to streamline operations and achieve measurable results. Our dedicated professionals bring unmatched expertise and passion to every engagement. Partner with us to unlock your organization\'s full potential and drive lasting innovation!',
+        ctaText: 'DISCOVER YIELDGE',
+        ctaLink: '/company',
+        backgroundImage: '/assets/img2.jpg',
+      },
+      {
+        heading: 'CLIENT-FIRST APPROACH',
+        subheading: 'Your success drives everything we do',
+        description: 'At Yieldge, we believe in building lasting partnerships. Our solutions are tailored to your unique requirements, ensuring every client receives dedicated support and strategic guidance. With an uncompromising focus on quality and results, our teams are committed to exceeding your expectations. Trust us to elevate your technology capabilities and accelerate your growth!',
+        ctaText: 'START A CONVERSATION',
+        ctaLink: '/get-in-touch',
+        backgroundImage: '/assets/img4.jpg',
+      },
+    ],
   },
   services: {
     sectionLabel: 'Our Solutions',
-    title: 'Spend less time on admin,',
-    titleHighlight: 'more time closing deals',
-    description: 'We help real-estate professionals automate the busywork so you can focus on what matters: closing deals, managing properties, and growing your portfolio.',
+    title: 'Our Solutions',
+    titleHighlight: '',
+    description: 'Yieldge delivers cutting-edge technology solutions designed to accelerate your business growth and operational excellence. Our certified experts leverage advanced methodologies and tools to create transformative outcomes. From modernizing legacy systems to implementing scalable cloud architectures, we provide end-to-end solutions tailored to your strategic objectives.',
     services: [
       {
-        icon: 'Users',
-        title: 'Automated Lead Generation & Qualification',
-        description: 'Capture and qualify leads 24/7 so you only talk to real prospects. Stop wasting time on unqualified inquiries.',
-        features: ['24/7 lead capture', 'AI-powered qualification', 'Instant follow-ups', 'CRM integration'],
+        icon: 'Shield',
+        title: 'QA and Test Automation',
+        description: 'Comprehensive quality assurance and automated testing services to ensure your software meets the highest standards',
+        features: ['Automated testing', 'Quality assurance', 'Performance testing', 'CI/CD integration'],
         image: '/assets/img4.jpg',
       },
       {
-        icon: 'FileText',
-        title: 'Document & Data Handling Automation',
-        description: 'Contracts, valuations, leases, and portfolios — organized, searchable, and analyzed automatically.',
-        features: ['Contract automation', 'Document storage', 'Data extraction', 'Searchable archives'],
+        icon: 'Shield',
+        title: 'Security Services',
+        description: 'Advanced cybersecurity solutions and threat protection to safeguard your digital assets',
+        features: ['Cybersecurity', 'Threat protection', 'Security audits', 'Compliance'],
+        image: '/assets/img5.jpg',
+      },
+      {
+        icon: 'Target',
+        title: 'Technology Consulting',
+        description: 'Strategic technology guidance to drive digital transformation and business growth',
+        features: ['Strategic planning', 'Digital transformation', 'Architecture design', 'Best practices'],
+        image: '/assets/img6.jpg',
+      },
+      {
+        icon: 'Globe',
+        title: 'Mobile & Web Apps',
+        description: 'Custom mobile and web application development for exceptional user experiences',
+        features: ['Mobile apps', 'Web development', 'User experience', 'Responsive design'],
+        image: '/assets/img4.jpg',
+      },
+      {
+        icon: 'Users',
+        title: 'Staff Augmentation',
+        description: 'Access top technical talent to scale your team quickly and efficiently',
+        features: ['Technical talent', 'Team scaling', 'Expert resources', 'Flexible engagement'],
         image: '/assets/img5.jpg',
       },
       {
         icon: 'TrendingUp',
-        title: 'Market Analytics & Valuation Insights',
-        description: 'Get predictive pricing and investment guidance based on real data. Make smarter decisions faster.',
-        features: ['Predictive pricing', 'Market trends', 'Investment analysis', 'ROI forecasting'],
+        title: 'Analytics and Insights',
+        description: 'Data-driven insights and analytics solutions to power informed business decisions',
+        features: ['Business intelligence', 'Data analytics', 'Reporting', 'Insights'],
         image: '/assets/img6.jpg',
       },
       {
-        icon: 'Home',
-        title: 'Property & Tenant Management',
-        description: 'Rent collection, maintenance scheduling, tenant communications, lease renewals — automated reliably.',
-        features: ['Automated rent collection', 'Maintenance tracking', 'Tenant portal', 'Lease management'],
+        icon: 'Globe',
+        title: 'Cloud Solutions',
+        description: 'Scalable cloud infrastructure and migration services for modern businesses',
+        features: ['Cloud migration', 'Infrastructure', 'Scalability', 'DevOps'],
         image: '/assets/img4.jpg',
       },
       {
         icon: 'Globe',
-        title: 'Scalable Web & Cloud Infrastructure',
-        description: 'Secure, reliable, and customized for real-estate businesses ready to grow without technical headaches.',
-        features: ['Cloud hosting', 'Data security', 'Scalable architecture', 'Custom integrations'],
+        title: 'Offshore Development',
+        description: 'Nearshore software development teams delivering quality and value',
+        features: ['Nearshore teams', 'Quality delivery', 'Cost-effective', 'Expert developers'],
         image: '/assets/img5.jpg',
+      },
+      {
+        icon: 'FileCode',
+        title: 'Tailored Software',
+        description: 'Custom software solutions designed specifically for your unique business needs',
+        features: ['Custom development', 'Business-specific', 'Scalable solutions', 'Full lifecycle'],
+        image: '/assets/img6.jpg',
       },
     ],
   },
   whyChooseUs: {
     title: 'Why Choose',
     titleHighlight: 'Yieldge?',
-    description: 'Experienced tech team with proven results in real-estate. We\'ve helped clients cut admin time, increase conversions, and reduce costs — so you can focus on growing your business.',
+    description: 'With over 15+ years serving the global technology landscape, Yieldge has established itself as a trusted partner in digital transformation. We\'ve empowered countless organizations to streamline operations and achieve measurable results. Our dedicated professionals bring unmatched expertise and passion to every engagement.',
     image: '/assets/img7.jpg',
     imageAlt: 'Growth and performance',
     values: [
       {
         icon: 'Target',
-        title: 'Real-Estate Expertise',
-        description: 'We understand the unique challenges of agents, brokers, property managers, and investors.',
+        title: '15+ Years of Experience',
+        description: 'We understand the unique challenges businesses face and bring decades of proven expertise to every engagement.',
       },
       {
         icon: 'Zap',
-        title: 'Proven Results',
-        description: 'Our clients cut admin time, increase lead-to-sale conversion, and reduce overhead costs significantly.',
+        title: 'Proven Excellence',
+        description: 'We\'ve empowered countless organizations to streamline operations and achieve measurable results across the Americas.',
       },
       {
         icon: 'Lightbulb',
-        title: 'Custom Solutions',
-        description: 'Every implementation is tailored to your specific workflow, property types, and business goals.',
+        title: 'Client-First Approach',
+        description: 'Our solutions are tailored to your unique requirements, ensuring every client receives dedicated support and strategic guidance.',
       },
       {
         icon: 'Shield',
         title: 'Reliable & Secure',
-        description: 'Enterprise-grade security and reliability. Your data and your clients\' information stay protected.',
+        description: 'Enterprise-grade security and reliability. Your data and business information stay protected with industry-leading standards.',
       },
     ],
   },
@@ -326,32 +374,34 @@ export const homepageContent: PageContent = {
     ctaText: 'Schedule a free consultation',
   },
   finalCTA: {
-    sectionLabel: 'Special Offer',
-    title: '15min Real-Estate AI Readiness Consultation',
-    description: 'No strings attached. We\'ll analyze your current operations, identify automation opportunities, and show you exactly how our solutions can help you close more deals and save time.',
+    sectionLabel: 'Comienza hoy',
+    title: 'Transforma tu negocio con tecnología que rinde',
+    description: 'Agenda una llamada estratégica gratuita de 30 minutos. Sin compromiso. Analizamos tu situación actual y definimos un plan de acción concreto.',
     benefits: [
-      'Personalized strategy for your real-estate business',
-      'ROI projection and implementation roadmap',
-      'Answers to all your technical questions',
+      'Estrategia personalizada para tu negocio',
+      'ROI proyectado y plan de implementación',
+      'Respuestas a todas tus preguntas técnicas',
     ],
-    ctaText: 'Schedule a consultation',
-    ctaSubtext: '📅 Immediate availability • 💬 No commitment • ⚡ Clear results',
+    ctaText: 'Agenda tu llamada gratuita',
+    ctaSubtext: '📅 Disponibilidad inmediata • 💬 Sin compromiso • ⚡ Resultados claros',
     image: '/assets/img3.jpg',
-    imageAlt: 'Let\'s work together',
+    imageAlt: 'Transforma tu negocio',
   },
 };
 
 // Yieldedge page content (General business focused)
 export const yieldedgeContent: PageContent = {
   hero: {
-    badge: 'Business Growth Partner',
-    headline: 'Increase Your Leads & Revenue With a System That',
-    headlineHighlight: 'Follows Up for You',
-    subheadline: 'We help businesses turn website visitors into booked calls and paying customers through smart websites and automated follow-ups.',
-    primaryCTA: 'Schedule a Call',
-    secondaryCTA: 'See How It Works',
-    heroImage: '/assets/img1.jpg', // Reusing same image
-    heroImageAlt: 'Modern technology workspace',
+    slides: [
+      {
+        heading: 'Business Growth Partner',
+        subheading: 'Increase Your Leads & Revenue With a System That Follows Up for You',
+        description: 'We help businesses turn website visitors into booked calls and paying customers through smart websites and automated follow-ups.',
+        ctaText: 'Schedule a Call',
+        ctaLink: '/get-in-touch',
+        backgroundImage: '/assets/img1.jpg',
+      },
+    ],
   },
   services: {
     sectionLabel: 'What We Build',
@@ -560,14 +610,16 @@ export const yieldedgeContent: PageContent = {
 // VibeRescue page content (Dark theme, AI project rescue focused)
 export const viberescueContent: PageContent = {
   hero: {
-    badge: 'LIMITED SPOTS: Only 7 Rescue Slots Left This Week',
-    headline: 'Your Vibe-Coded Project',
-    headlineHighlight: 'Deserves to Ship',
-    subheadline: 'Stuck on that AI-built project? App crashed and burning? We\'re the tech rescue team that turns your vibe-coded chaos into production-ready success.',
-    primaryCTA: 'Emergency Rescue - Get Help Now',
-    secondaryCTA: 'Book Free Consultation',
-    heroImage: '/assets/img1.jpg',
-    heroImageAlt: 'VibeRescue - Tech Rescue Team',
+    slides: [
+      {
+        heading: 'LIMITED SPOTS: Only 7 Rescue Slots Left This Week',
+        subheading: 'Your Vibe-Coded Project Deserves to Ship',
+        description: 'Stuck on that AI-built project? App crashed and burning? We\'re the tech rescue team that turns your vibe-coded chaos into production-ready success.',
+        ctaText: 'Emergency Rescue - Get Help Now',
+        ctaLink: '/get-in-touch',
+        backgroundImage: '/assets/img1.jpg',
+      },
+    ],
   },
   services: {
     sectionLabel: 'Our Services',
