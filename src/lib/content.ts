@@ -293,11 +293,11 @@ export const homepageContent: PageContent = {
   caseStudies: {
     sectionLabel: 'Success Stories',
     title: 'Real Results for',
-    titleHighlight: 'Real-Estate Pros',
-    description: 'See how we\'ve helped real-estate professionals save time, increase conversions, and grow their business with smart automation.',
+    titleHighlight: 'Technology Pros',
+    description: 'See how we\'ve helped technology professionals save time, increase conversions, and grow their business with smart automation.',
     caseStudies: [
       {
-        title: 'Boutique Real-Estate Agency',
+        title: 'Boutique Technology Agency',
         category: 'Lead Generation',
         location: 'Miami, FL',
         description: 'A mid-sized agency struggling with manual lead follow-ups and unqualified inquiries. We implemented AI-powered lead qualification and automated nurture sequences.',
@@ -321,7 +321,7 @@ export const homepageContent: PageContent = {
         image: '/assets/img12.jpg',
       },
       {
-        title: 'Real-Estate Investment Group',
+        title: 'Technology Investment Group',
         category: 'Analytics & Insights',
         location: 'Phoenix, AZ',
         description: 'Investors needed better data to evaluate potential acquisitions. We implemented market analytics and predictive pricing tools to inform their investment strategy.',
@@ -344,11 +344,11 @@ export const homepageContent: PageContent = {
     sectionLabel: 'FAQ',
     title: 'Questions?',
     titleHighlight: 'We\'ve got answers',
-    description: 'Common questions about our real-estate automation solutions',
+    description: 'Common questions about our technology solutions',
     faqs: [
       {
-        question: 'Does AI replace human expertise in real-estate?',
-        answer: 'No. Our AI solutions enhance your expertise, not replace it. We automate repetitive tasks like lead qualification, document processing, and follow-ups — freeing you to focus on building relationships and closing deals. The human touch remains essential in real-estate.',
+        question: 'Does AI replace human expertise in technology solutions?',
+        answer: 'No. Our AI solutions enhance your expertise, not replace it. We automate repetitive tasks like lead qualification, document processing, and follow-ups — freeing you to focus on building relationships and closing deals. The human touch remains essential in technology solutions.',
       },
       {
         question: 'Is my data safe and private?',
@@ -368,7 +368,7 @@ export const homepageContent: PageContent = {
       },
       {
         question: 'Can your solutions integrate with my existing tools?',
-        answer: 'Yes. We specialize in integrating with popular real-estate platforms, CRMs (like Zillow, Realtor.com, HubSpot), property management systems, and other tools you already use. Our solutions are built to enhance your current workflow, not disrupt it.',
+        answer: 'Yes. We specialize in integrating with popular business platforms, CRMs (like HubSpot, Salesforce), and other tools you already use. Our solutions are built to enhance your current workflow, not disrupt it.',
       },
     ],
     ctaText: 'Schedule a free consultation',
