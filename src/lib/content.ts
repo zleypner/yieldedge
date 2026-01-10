@@ -1054,5 +1054,658 @@ export const viberescueContent: PageContent = {
   },
 };
 
+// Construction & Contractors page content
+export const constructionContent: PageContent = {
+  hero: {
+    slides: [
+      {
+        heading: 'Construction & Contractor Partner',
+        subheading: 'Get More Local Job Requests',
+        description: 'Turn website visitors into qualified job leads. We build high-converting websites and automated follow-up systems that book more estimates and fill your calendar.',
+        ctaText: 'Get More Job Requests',
+        ctaLink: '/get-in-touch',
+        backgroundImage: '/assets/img1.jpg',
+      },
+    ],
+  },
+  services: {
+    sectionLabel: 'What We Build',
+    title: 'Stop chasing leads.',
+    titleHighlight: 'Start booking jobs.',
+    description: 'We build websites and automation systems that capture local leads, follow up instantly, and book more estimates — so you can focus on the work, not the phones.',
+    services: [
+      {
+        icon: 'Globe',
+        title: 'High-Converting Contractor Websites',
+        description: 'Professional websites built to convert visitors into job requests. Mobile-responsive, fast-loading, and optimized for local search.',
+        features: ['Mobile-responsive design', 'Fast loading times', 'Local SEO optimized', 'Gallery showcases'],
+        image: '/assets/img4.jpg',
+      },
+      {
+        icon: 'Users',
+        title: '24/7 Lead Capture + Instant Follow-Up',
+        description: 'Capture leads around the clock and follow up instantly with automated SMS, email, and phone calls — even when you\'re on the job site.',
+        features: ['24/7 lead capture', 'Instant SMS alerts', 'Automated follow-ups', 'Never miss a lead'],
+        image: '/assets/img5.jpg',
+      },
+      {
+        icon: 'MessageCircle',
+        title: 'Automated Estimate Scheduling',
+        description: 'Let customers book estimates directly from your website. Automated reminders reduce no-shows and keep your calendar full.',
+        features: ['Online booking', 'Automated reminders', 'Calendar sync', 'Reduced no-shows'],
+        image: '/assets/img6.jpg',
+      },
+      {
+        icon: 'BarChart',
+        title: 'Lead Tracking + ROI Dashboard',
+        description: 'See exactly where your leads come from, which jobs close, and your marketing ROI — all in one simple dashboard.',
+        features: ['Lead source tracking', 'Job conversion rates', 'Marketing ROI', 'Simple reports'],
+        image: '/assets/img4.jpg',
+      },
+      {
+        icon: 'Bot',
+        title: 'Optional AI Phone + Chat Support',
+        description: 'Let AI handle initial customer questions, qualify leads, and schedule estimates — freeing you to focus on the work.',
+        features: ['AI phone answering', 'Lead qualification', 'Appointment scheduling', 'FAQ automation'],
+        image: '/assets/img5.jpg',
+      },
+    ],
+  },
+  whyChooseUs: {
+    title: 'Why Choose',
+    titleHighlight: 'Yieldge?',
+    description: 'We specialize in contractor websites and automation. Our clients book more estimates, respond faster, and close more jobs — with systems built for the trades.',
+    image: '/assets/img7.jpg',
+    imageAlt: 'Construction success',
+    values: [
+      {
+        icon: 'Target',
+        title: 'Built for the Trades',
+        description: 'We understand contractors, HVAC, roofing, plumbing, remodeling — our systems are built for high-ticket local services.',
+      },
+      {
+        icon: 'Zap',
+        title: 'Fast Response = More Jobs',
+        description: 'Instant follow-ups mean you connect with leads before your competitors. Speed wins in the trades.',
+      },
+      {
+        icon: 'Lightbulb',
+        title: 'Custom for Your Business',
+        description: 'Every system is tailored to your services, service area, and how you book jobs — no generic templates.',
+      },
+      {
+        icon: 'Shield',
+        title: 'Reliable & Secure',
+        description: 'Enterprise-grade security and uptime. Your leads and customer information stay protected with industry-leading standards.',
+      },
+    ],
+  },
+  process: {
+    sectionLabel: 'How It Works',
+    title: 'From website to',
+    titleHighlight: 'booked jobs in 3 steps',
+    description: 'Our proven process gets you up and running fast — from initial setup to booking more estimates.',
+    steps: [
+      {
+        icon: 'ClipboardCheck',
+        number: '01',
+        title: 'Initial Review (No Obligation)',
+        description: 'We analyze your current lead flow, identify opportunities, and show you exactly how automation can book more jobs.',
+        image: '/assets/img9.jpg',
+        deliverables: ['Current state analysis', 'Opportunity assessment', 'ROI projection'],
+      },
+      {
+        icon: 'FileCode',
+        number: '02',
+        title: 'Build Your System',
+        description: 'We build your website, set up lead capture, configure automated follow-ups, and integrate with your existing tools.',
+        image: '/assets/img10.jpg',
+        deliverables: ['Website launch', 'Lead capture setup', 'Automation configuration', 'Team training'],
+      },
+      {
+        icon: 'Rocket',
+        number: '03',
+        title: 'Book More Estimates',
+        description: 'Your system goes live and starts capturing leads 24/7. We monitor performance and optimize to book more jobs.',
+        image: '/assets/img11.jpg',
+        deliverables: ['Performance monitoring', 'Conversion optimization', 'Ongoing support', 'More booked jobs'],
+      },
+    ],
+    ctaText: 'Get Your Initial Review',
+  },
+  caseStudies: {
+    sectionLabel: 'Success Stories',
+    title: 'Real Results for',
+    titleHighlight: 'Contractors',
+    description: 'See how we\'ve helped contractors book more estimates, respond faster, and close more jobs with smart automation.',
+    caseStudies: [
+      {
+        title: 'HVAC Company',
+        category: 'Lead Generation',
+        location: 'Houston, TX',
+        description: 'An HVAC company struggling with slow response times and missed leads. We built a high-converting website with instant SMS follow-ups.',
+        achievements: [
+          'Increased booked estimates by 65%',
+          'Reduced response time from hours to minutes',
+          'Captured leads 24/7, even after hours',
+        ],
+        image: '/assets/img12.jpg',
+      },
+      {
+        title: 'Roofing Contractor',
+        category: 'Conversion Optimization',
+        location: 'Phoenix, AZ',
+        description: 'A roofing contractor losing leads to competitors. We implemented automated follow-ups and online estimate scheduling.',
+        achievements: [
+          'Booked 3x more estimates per month',
+          'Reduced no-shows by 70% with reminders',
+          'Closed 40% more jobs',
+        ],
+        image: '/assets/img12.jpg',
+      },
+      {
+        title: 'General Contractor',
+        category: 'Operations Automation',
+        location: 'Denver, CO',
+        description: 'A general contractor juggling multiple projects and missing calls. We set up AI phone answering and lead tracking.',
+        achievements: [
+          'Never missed a lead again',
+          'Saved 15 hours per week on admin',
+          'Increased revenue by 50%',
+        ],
+        image: '/assets/img12.jpg',
+      },
+    ],
+    stats: [
+      { icon: 'Timer', value: '60%', label: 'Faster response time' },
+      { icon: 'TrendingUp', value: '65%', label: 'More booked estimates' },
+      { icon: 'DollarSign', value: '24/7', label: 'Lead capture' },
+      { icon: 'Bot', value: '50%', label: 'More jobs closed' },
+    ],
+  },
+  faq: {
+    sectionLabel: 'FAQ',
+    title: 'Questions?',
+    titleHighlight: 'We\'ve got answers',
+    description: 'Common questions about our contractor website and automation solutions',
+    faqs: [
+      {
+        question: 'Will this work for my trade?',
+        answer: 'Yes. Our systems work for HVAC, roofing, plumbing, electrical, remodeling, general contractors, and all home service businesses. We customize every solution to fit your specific trade and how you book jobs.',
+      },
+      {
+        question: 'How fast will I see results?',
+        answer: 'Most clients see more booked estimates within the first month. You\'ll start capturing leads as soon as your website goes live, typically within 2-4 weeks.',
+      },
+      {
+        question: 'What if I already have a website?',
+        answer: 'We can work with your existing website and add lead capture and automation, or build you a new high-converting site from scratch. We\'ll recommend the best approach during your initial review.',
+      },
+      {
+        question: 'How much does it cost?',
+        answer: 'Investment varies based on your specific needs and service area. Schedule an initial review and we\'ll provide a detailed proposal with clear pricing. Most clients see ROI within 3-6 months through more booked jobs.',
+      },
+      {
+        question: 'Do I need to be tech-savvy?',
+        answer: 'No technical expertise required. We design user-friendly systems and provide training for your team. We also offer ongoing support to ensure smooth operation.',
+      },
+      {
+        question: 'Can this integrate with my existing tools?',
+        answer: 'Yes. We integrate with popular contractor CRMs, scheduling tools, payment processors, and other software you already use. Our solutions enhance your current workflow.',
+      },
+    ],
+    ctaText: 'Schedule a consultation',
+  },
+  finalCTA: {
+    sectionLabel: 'Limited Offer',
+    title: 'Ready to Book More Jobs?',
+    description: 'Schedule an initial review with no obligation. We\'ll analyze your current lead flow and show you exactly how to book more estimates.',
+    benefits: [
+      'Personalized strategy for your trade',
+      'ROI projection and implementation plan',
+      'Answers to all your questions',
+    ],
+    ctaText: 'Get Your Initial Review',
+    ctaSubtext: '📅 Immediate availability • 💬 No commitment • ⚡ Clear results',
+    image: '/assets/img3.jpg',
+    imageAlt: 'Book more jobs',
+  },
+};
+
+// Beauty & Aesthetics page content
+export const beautyContent: PageContent = {
+  hero: {
+    slides: [
+      {
+        heading: 'Beauty & Salon Partner',
+        subheading: 'Turn Followers Into Booked Clients',
+        description: 'We build Instagram-worthy websites and booking systems that turn your social media followers into paying clients — automatically.',
+        ctaText: 'Get More Appointments',
+        ctaLink: '/get-in-touch',
+        backgroundImage: '/assets/img1.jpg',
+      },
+    ],
+  },
+  services: {
+    sectionLabel: 'What We Build',
+    title: 'Make your brand look as',
+    titleHighlight: 'good as your work',
+    description: 'We build beautiful websites and booking systems that showcase your work, capture leads from Instagram, and fill your calendar — 24/7.',
+    services: [
+      {
+        icon: 'Globe',
+        title: 'Stunning Portfolio Websites',
+        description: 'Beautiful, mobile-first websites that showcase your work and convert visitors into booked appointments. Built for beauty professionals.',
+        features: ['Mobile-first design', 'Portfolio galleries', 'Instagram integration', 'Online booking'],
+        image: '/assets/img4.jpg',
+      },
+      {
+        icon: 'Users',
+        title: 'Online Booking + Calendar Sync',
+        description: 'Let clients book appointments 24/7 directly from your website or Instagram. Syncs with your calendar and sends automated reminders.',
+        features: ['24/7 online booking', 'Calendar sync', 'Automated reminders', 'Reduced no-shows'],
+        image: '/assets/img5.jpg',
+      },
+      {
+        icon: 'MessageCircle',
+        title: 'Automated Client Follow-Ups',
+        description: 'Stay top-of-mind with automated follow-ups, appointment reminders, and re-booking campaigns — all on autopilot.',
+        features: ['Appointment reminders', 'Re-booking campaigns', 'Review requests', 'Birthday messages'],
+        image: '/assets/img6.jpg',
+      },
+      {
+        icon: 'BarChart',
+        title: 'Instagram to Appointment Pipeline',
+        description: 'Turn Instagram followers into paying clients. Track which posts drive bookings and optimize what works.',
+        features: ['Instagram link-in-bio', 'Lead tracking', 'Booking analytics', 'Social proof'],
+        image: '/assets/img4.jpg',
+      },
+      {
+        icon: 'Bot',
+        title: 'Optional AI Chat Support',
+        description: 'Let AI handle client questions, pricing inquiries, and appointment scheduling — even when you\'re with a client.',
+        features: ['AI chat support', 'Service info', 'Pricing questions', 'Instant booking'],
+        image: '/assets/img5.jpg',
+      },
+    ],
+  },
+  whyChooseUs: {
+    title: 'Why Choose',
+    titleHighlight: 'Yieldge?',
+    description: 'We specialize in websites for beauty professionals. Our clients book more appointments, reduce no-shows, and grow their business — with systems as beautiful as their work.',
+    image: '/assets/img7.jpg',
+    imageAlt: 'Beauty success',
+    values: [
+      {
+        icon: 'Target',
+        title: 'Built for Beauty Pros',
+        description: 'We understand salons, barbershops, nail studios, and informational sites. Our systems are built for appointment-based beauty businesses.',
+      },
+      {
+        icon: 'Zap',
+        title: 'Instagram-First Design',
+        description: 'Your website looks amazing on mobile and converts Instagram followers into paying clients. Visual, fast, and beautiful.',
+      },
+      {
+        icon: 'Lightbulb',
+        title: 'Custom for Your Brand',
+        description: 'Every website reflects your unique brand, vibe, and services. No cookie-cutter templates — just beautiful, custom design.',
+      },
+      {
+        icon: 'Shield',
+        title: 'Reliable & Secure',
+        description: 'Enterprise-grade security and reliability. Your client information stays protected with industry-leading standards.',
+      },
+    ],
+  },
+  process: {
+    sectionLabel: 'How It Works',
+    title: 'From concept to',
+    titleHighlight: 'booked calendar in 3 steps',
+    description: 'Our proven process gets you up and running fast — from design to booking more appointments.',
+    steps: [
+      {
+        icon: 'ClipboardCheck',
+        number: '01',
+        title: 'Brand & Vision Review',
+        description: 'We analyze your brand, target clients, and booking goals. Understand your vibe and create a strategy to fill your calendar.',
+        image: '/assets/img9.jpg',
+        deliverables: ['Brand analysis', 'Target client profile', 'Booking strategy'],
+      },
+      {
+        icon: 'FileCode',
+        number: '02',
+        title: 'Design & Build Your Site',
+        description: 'We design a stunning website that matches your aesthetic, set up online booking, and configure automated follow-ups.',
+        image: '/assets/img10.jpg',
+        deliverables: ['Custom website design', 'Online booking setup', 'Automation configuration', 'Training'],
+      },
+      {
+        icon: 'Rocket',
+        number: '03',
+        title: 'Launch & Fill Your Calendar',
+        description: 'Your website goes live and starts booking appointments 24/7. We monitor performance and optimize to book more clients.',
+        image: '/assets/img11.jpg',
+        deliverables: ['Website launch', 'Performance tracking', 'Ongoing optimization', 'More bookings'],
+      },
+    ],
+    ctaText: 'Schedule Your Brand Review',
+  },
+  caseStudies: {
+    sectionLabel: 'Success Stories',
+    title: 'Real Results for',
+    titleHighlight: 'Beauty Pros',
+    description: 'See how we\'ve helped beauty professionals book more appointments, reduce no-shows, and grow their business.',
+    caseStudies: [
+      {
+        title: 'Hair Salon',
+        category: 'Online Booking',
+        location: 'Los Angeles, CA',
+        description: 'A hair salon struggling with phone tag and missed bookings. We built a beautiful website with integrated online booking.',
+        achievements: [
+          'Increased bookings by 80%',
+          'Reduced no-shows by 60% with reminders',
+          'Saved 10 hours per week on scheduling',
+        ],
+        image: '/assets/img12.jpg',
+      },
+      {
+        title: 'Barbershop',
+        category: 'Instagram Growth',
+        location: 'Miami, FL',
+        description: 'A barbershop with strong Instagram presence but low conversion. We created an Instagram-to-booking pipeline.',
+        achievements: [
+          'Converted 45% of Instagram followers to clients',
+          'Doubled monthly bookings',
+          'Built a 6-month waitlist',
+        ],
+        image: '/assets/img12.jpg',
+      },
+      {
+        title: 'Nail Studio',
+        category: 'Client Retention',
+        location: 'New York, NY',
+        description: 'A nail studio losing clients to competitors. We implemented automated re-booking campaigns and review requests.',
+        achievements: [
+          'Increased repeat bookings by 70%',
+          'Improved client retention by 55%',
+          'Grew 5-star reviews by 200%',
+        ],
+        image: '/assets/img12.jpg',
+      },
+    ],
+    stats: [
+      { icon: 'Timer', value: '80%', label: 'More appointments' },
+      { icon: 'TrendingUp', value: '60%', label: 'Fewer no-shows' },
+      { icon: 'DollarSign', value: '24/7', label: 'Online booking' },
+      { icon: 'Bot', value: '70%', label: 'Client retention' },
+    ],
+  },
+  faq: {
+    sectionLabel: 'FAQ',
+    title: 'Questions?',
+    titleHighlight: 'We\'ve got answers',
+    description: 'Common questions about our beauty and salon website solutions',
+    faqs: [
+      {
+        question: 'Will this work for my type of beauty business?',
+        answer: 'Yes. Our systems work for hair salons, barbershops, nail studios, lash studios, makeup artists, informational sites for beauty services, and other appointment-based beauty businesses. We customize every solution to fit your services and brand.',
+      },
+      {
+        question: 'Can clients book from Instagram?',
+        answer: 'Absolutely. We create a seamless Instagram-to-booking experience. Clients can click your link-in-bio and book appointments instantly from your Instagram profile.',
+      },
+      {
+        question: 'How do I prevent no-shows?',
+        answer: 'Automated reminders sent via SMS and email significantly reduce no-shows. Our systems send reminders 24 hours before appointments and follow up with clients who miss appointments.',
+      },
+      {
+        question: 'What\'s the cost?',
+        answer: 'Investment varies based on your specific needs and services. Schedule a brand review and we\'ll provide a detailed proposal with clear pricing. Most clients see ROI within 2-4 months through more bookings.',
+      },
+      {
+        question: 'Do I need technical knowledge?',
+        answer: 'No technical expertise required. We design beautiful, easy-to-use systems and provide training for you and your team. We also offer ongoing support.',
+      },
+      {
+        question: 'Can this work with my existing booking system?',
+        answer: 'Yes. We integrate with popular booking platforms like Square, Vagaro, Booksy, and others. Or we can build a custom booking system just for you.',
+      },
+    ],
+    ctaText: 'Schedule a brand review',
+  },
+  finalCTA: {
+    sectionLabel: 'Limited Offer',
+    title: 'Ready to Fill Your Calendar?',
+    description: 'Schedule a brand review with no obligation. We\'ll analyze your current booking process and show you how to get more appointments.',
+    benefits: [
+      'Custom strategy for your beauty business',
+      'ROI projection and design preview',
+      'Answers to all your questions',
+    ],
+    ctaText: 'Schedule Your Brand Review',
+    ctaSubtext: '📅 Immediate availability • 💬 No commitment • ⚡ Beautiful results',
+    image: '/assets/img3.jpg',
+    imageAlt: 'Beautiful websites',
+  },
+};
+
+// Professional Services page content
+export const professionalServicesContent: PageContent = {
+  hero: {
+    slides: [
+      {
+        heading: 'Professional Services Partner',
+        subheading: 'Build Trust Before the First Call',
+        description: 'We build authoritative websites and client intake systems that establish credibility, capture qualified leads, and convert visitors into consultations.',
+        ctaText: 'Convert More Consultations',
+        ctaLink: '/get-in-touch',
+        backgroundImage: '/assets/img1.jpg',
+      },
+    ],
+  },
+  services: {
+    sectionLabel: 'What We Build',
+    title: 'Convert visitors into',
+    titleHighlight: 'qualified consultations',
+    description: 'We build professional websites and automation systems that establish authority, capture high-value leads, and convert them into paying clients.',
+    services: [
+      {
+        icon: 'Globe',
+        title: 'Authority-Building Websites',
+        description: 'Professional websites that establish credibility and trust. Designed to convert visitors into consultation requests for legal, accounting, and consulting firms.',
+        features: ['Professional design', 'Credibility signals', 'SEO optimized', 'Mobile-responsive'],
+        image: '/assets/img4.jpg',
+      },
+      {
+        icon: 'Users',
+        title: 'Qualified Lead Capture + CRM',
+        description: 'Intelligent intake forms that pre-qualify leads and sync to your CRM. Only talk to prospects who are the right fit.',
+        features: ['Smart intake forms', 'Lead qualification', 'CRM integration', 'Generic contact forms only'],
+        image: '/assets/img5.jpg',
+      },
+      {
+        icon: 'MessageCircle',
+        title: 'Automated Client Nurturing',
+        description: 'Stay top-of-mind with automated email sequences, appointment reminders, and follow-ups that build trust over time.',
+        features: ['Email nurture sequences', 'Appointment reminders', 'General updates', 'Touchpoint automation'],
+        image: '/assets/img6.jpg',
+      },
+      {
+        icon: 'BarChart',
+        title: 'Client Acquisition Analytics',
+        description: 'Track lead sources, conversion rates, and client lifetime value. Make data-driven decisions about your marketing investments.',
+        features: ['Lead source tracking', 'Conversion analytics', 'Client LTV tracking', 'ROI reporting'],
+        image: '/assets/img4.jpg',
+      },
+      {
+        icon: 'Bot',
+        title: 'Optional AI Intake Assistant',
+        description: 'Let AI handle initial client inquiries, answer common questions, and schedule consultations — freeing you to focus on billable hours.',
+        features: ['AI chat support', 'FAQ automation', 'Consultation scheduling', 'Lead qualification'],
+        image: '/assets/img5.jpg',
+      },
+    ],
+  },
+  whyChooseUs: {
+    title: 'Why Choose',
+    titleHighlight: 'Yieldge?',
+    description: 'We specialize in websites for professional services firms. Our clients convert more consultations, reduce administrative overhead, and grow their practice — with systems built for trust.',
+    image: '/assets/img7.jpg',
+    imageAlt: 'Professional success',
+    values: [
+      {
+        icon: 'Target',
+        title: 'Built for Professionals',
+        description: 'We understand law firms, CPAs, consultants, and insurance agencies. Our systems are built for high-trust professional services.',
+      },
+      {
+        icon: 'Zap',
+        title: 'Authority & Credibility',
+        description: 'Every website is designed to establish your expertise, build trust, and position you as the obvious choice in your market.',
+      },
+      {
+        icon: 'Lightbulb',
+        title: 'Custom for Your Practice',
+        description: 'Every system is tailored to your practice area, client type, and intake process. No generic templates — just professional, custom solutions.',
+      },
+      {
+        icon: 'Shield',
+        title: 'Secure & Compliant',
+        description: 'Enterprise-grade security with strict access controls. Your client information stays protected with industry-leading standards.',
+      },
+    ],
+  },
+  process: {
+    sectionLabel: 'How It Works',
+    title: 'From website to',
+    titleHighlight: 'consultations in 3 steps',
+    description: 'Our proven process gets you up and running fast — from initial strategy to converting more consultations.',
+    steps: [
+      {
+        icon: 'ClipboardCheck',
+        number: '01',
+        title: 'Practice Analysis (No Obligation)',
+        description: 'We analyze your current client acquisition process, identify opportunities, and show you exactly how to convert more consultations.',
+        image: '/assets/img9.jpg',
+        deliverables: ['Current state analysis', 'Opportunity assessment', 'ROI projection'],
+      },
+      {
+        icon: 'FileCode',
+        number: '02',
+        title: 'Build Your System',
+        description: 'We build your professional website, set up lead capture forms, configure automated nurturing, and integrate with your practice management tools.',
+        image: '/assets/img10.jpg',
+        deliverables: ['Website launch', 'Lead capture setup', 'Automation configuration', 'Team training'],
+      },
+      {
+        icon: 'Rocket',
+        number: '03',
+        title: 'Convert More Consultations',
+        description: 'Your system goes live and starts capturing qualified leads 24/7. We monitor performance and optimize to convert more consultations.',
+        image: '/assets/img11.jpg',
+        deliverables: ['Performance monitoring', 'Conversion optimization', 'Ongoing support', 'More consultations'],
+      },
+    ],
+    ctaText: 'Get Your Practice Analysis',
+  },
+  caseStudies: {
+    sectionLabel: 'Success Stories',
+    title: 'Real Results for',
+    titleHighlight: 'Professional Firms',
+    description: 'See how we\'ve helped professional services firms convert more consultations, reduce admin time, and grow their practice.',
+    caseStudies: [
+      {
+        title: 'Law Firm',
+        category: 'Lead Generation',
+        location: 'Chicago, IL',
+        description: 'A law firm struggling with unqualified inquiries and slow response times. We built a professional website with smart intake forms.',
+        achievements: [
+          'Increased qualified consultations by 75%',
+          'Reduced time spent on unqualified leads by 60%',
+          'Improved consultation-to-client rate by 45%',
+        ],
+        image: '/assets/img12.jpg',
+      },
+      {
+        title: 'CPA Firm',
+        category: 'Client Acquisition',
+        location: 'Boston, MA',
+        description: 'A CPA firm needing better lead nurturing for tax season. We implemented automated email sequences and appointment scheduling.',
+        achievements: [
+          'Booked 3x more consultations during tax season',
+          'Reduced administrative time by 50%',
+          'Increased client retention by 40%',
+        ],
+        image: '/assets/img12.jpg',
+      },
+      {
+        title: 'Business Consultant',
+        category: 'Authority Building',
+        location: 'San Francisco, CA',
+        description: 'A consultant needing to establish credibility online. We built an authority-focused website with lead magnets and automated nurturing.',
+        achievements: [
+          'Positioned as market leader in 6 months',
+          'Increased consultation requests by 120%',
+          'Raised average project value by 60%',
+        ],
+        image: '/assets/img12.jpg',
+      },
+    ],
+    stats: [
+      { icon: 'Timer', value: '75%', label: 'More consultations' },
+      { icon: 'TrendingUp', value: '60%', label: 'Less admin time' },
+      { icon: 'DollarSign', value: '24/7', label: 'Lead capture' },
+      { icon: 'Bot', value: '45%', label: 'Higher conversion' },
+    ],
+  },
+  faq: {
+    sectionLabel: 'FAQ',
+    title: 'Questions?',
+    titleHighlight: 'We\'ve got answers',
+    description: 'Common questions about our professional services website solutions',
+    faqs: [
+      {
+        question: 'Will this work for my type of professional practice?',
+        answer: 'Yes. Our systems work for law firms, accounting practices, insurance agencies, business consultants, financial advisors, and other professional services. We customize every solution to fit your practice area and client type.',
+      },
+      {
+        question: 'How do you handle client information?',
+        answer: 'We implement enterprise-grade security measures including encrypted data storage, secure cloud infrastructure, and strict access controls. Forms collect only basic contact information (name, email, phone, message). No sensitive information is stored.',
+      },
+      {
+        question: 'Can you help with compliance requirements?',
+        answer: 'We build systems with security and privacy in mind. However, we do not provide legal or compliance advice — compliance remains your responsibility. We recommend consulting with your compliance team.',
+      },
+      {
+        question: 'What\'s the cost?',
+        answer: 'Investment varies based on your specific needs and practice size. Schedule a practice analysis and we\'ll provide a detailed proposal with clear pricing. Most clients see ROI within 6-12 months through more consultations.',
+      },
+      {
+        question: 'Do I need technical knowledge?',
+        answer: 'No technical expertise required. We design professional, easy-to-use systems and provide comprehensive training for your team. We also offer ongoing support.',
+      },
+      {
+        question: 'Can this integrate with my practice management software?',
+        answer: 'Yes. We integrate with popular practice management platforms, CRMs, calendaring systems, and other tools you already use. Our solutions enhance your current workflow.',
+      },
+    ],
+    ctaText: 'Schedule a practice analysis',
+  },
+  finalCTA: {
+    sectionLabel: 'Professional Firms',
+    title: 'Ready to Convert More Consultations?',
+    description: 'Schedule a practice analysis with no obligation. We\'ll analyze your current client acquisition process and show you exactly how to convert more consultations.',
+    benefits: [
+      'Custom strategy for your practice',
+      'ROI projection and implementation plan',
+      'Answers to all your questions',
+    ],
+    ctaText: 'Get Your Practice Analysis',
+    ctaSubtext: '📅 Immediate availability • 💬 No commitment • ⚡ Professional results',
+    image: '/assets/img3.jpg',
+    imageAlt: 'Professional websites',
+  },
+};
 
 
