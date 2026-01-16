@@ -20,6 +20,11 @@ export default function LazySection({
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const sectionElement = sectionRef.current;
+    if (!sectionElement) {
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -27,9 +32,7 @@ export default function LazySection({
             setIsVisible(true);
             setHasLoaded(true);
             // Disconnect observer after loading to prevent re-triggering
-            if (sectionRef.current) {
-              observer.unobserve(sectionRef.current);
-            }
+            observer.unobserve(sectionElement);
           }
         });
       },
@@ -39,14 +42,10 @@ export default function LazySection({
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    observer.observe(sectionElement);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      observer.unobserve(sectionElement);
     };
   }, [hasLoaded, rootMargin, threshold]);
 

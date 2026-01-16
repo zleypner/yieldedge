@@ -12,8 +12,6 @@ export default function CountdownTimer({
   targetDate, 
   className = '' 
 }: CountdownTimerProps) {
-  // Default to 24 hours from now if no target date provided
-  const defaultTarget = targetDate || new Date(Date.now() + 24 * 60 * 60 * 1000);
   const [timeLeft, setTimeLeft] = useState({
     hours: 0,
     minutes: 0,
@@ -21,6 +19,9 @@ export default function CountdownTimer({
   });
 
   useEffect(() => {
+    // Default to 24 hours from now if no target date provided
+    const defaultTarget = targetDate || new Date(Date.now() + 24 * 60 * 60 * 1000);
+    
     const calculateTimeLeft = () => {
       const now = new Date().getTime();
       const target = defaultTarget.getTime();
@@ -45,7 +46,7 @@ export default function CountdownTimer({
     const interval = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(interval);
-  }, [defaultTarget]);
+  }, [targetDate]);
 
   const formatTime = (value: number) => {
     return value.toString().padStart(2, '0');
