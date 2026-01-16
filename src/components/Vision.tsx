@@ -58,8 +58,8 @@ export default function Vision() {
       className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden py-24 sm:py-32 lg:py-40"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-white to-white pointer-events-none -z-10" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#eff4ff]/30 via-white to-white pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#1F5CFF]/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
       {/* Decorative background images - do not affect layout flow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
@@ -96,7 +96,7 @@ export default function Vision() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight text-gray-900 mb-8 sm:mb-10 leading-[1.1]"
           >
             Nuestra{' '}
-            <span className="font-light bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+            <span className="font-light bg-gradient-to-r from-[#1F5CFF] to-[#1F5CFF] bg-clip-text text-transparent">
               visión
             </span>
           </motion.h2>
@@ -119,11 +119,11 @@ export default function Vision() {
               variants={fadeInUp}
               className="group relative"
             >
-              <div className="bg-white rounded-3xl p-10 sm:p-12 border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 h-full flex flex-col items-center text-center">
+              <div className="bg-white rounded-3xl p-10 sm:p-12 border border-gray-100 hover:border-[#dbe6ff] transition-all duration-300 hover:shadow-xl hover:shadow-[#1F5CFF]/5 h-full flex flex-col items-center text-center">
                 {/* Icon - Centered and uniform */}
                 <div className="mb-8">
-                  <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-blue-50 group-hover:bg-blue-100 flex items-center justify-center transition-colors">
-                    <value.icon className="w-8 h-8 sm:w-9 sm:h-9 text-blue-600" />
+                  <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-[#eff4ff] group-hover:bg-[#dbe6ff] flex items-center justify-center transition-colors">
+                    <value.icon className="w-8 h-8 sm:w-9 sm:h-9 text-[#1F5CFF]" />
                   </div>
                 </div>
 
@@ -153,7 +153,7 @@ export default function Vision() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-block px-10 py-5 bg-blue-600 text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40"
+            className="inline-block px-10 py-5 bg-[#1F5CFF] text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/25 hover:shadow-2xl hover:shadow-[#1F5CFF]/40"
           >
             Comienza hoy
           </motion.a>

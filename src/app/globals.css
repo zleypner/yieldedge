@@ -5,12 +5,17 @@
   --foreground: #111827;
   --accent-green: #D4F364;
   --accent-green-hover: #c5e855;
+  --primary-blue: #1F5CFF;
+  --primary-blue-light: #4d7aff;
+  --primary-blue-dark: #1a4edb;
+  --primary-blue-50: #eff4ff;
+  --primary-blue-100: #dbe6ff;
   --sky-blue: #0ea5e9;
   --deep-blue: #1e40af;
   --navy: #1e3a8a;
   --cyan: #06b6d4;
-  --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #1e40af 50%, #1e3a8a 100%);
-  --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
+  --gradient-primary: linear-gradient(135deg, #1F5CFF 0%, #1a4edb 100%);
+  --gradient-secondary: linear-gradient(135deg, #4d7aff 0%, #1F5CFF 100%);
   
   /* VibeRescue Dark Theme Colors */
   --viberescue-bg: hsl(224, 71%, 4%);
@@ -52,6 +57,11 @@
   /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: #1F5CFF;
+  --color-primary-light: #4d7aff;
+  --color-primary-dark: #1a4edb;
+  --color-primary-50: #eff4ff;
+  --color-primary-100: #dbe6ff;
   --color-sky-blue: #0ea5e9;
   --color-deep-blue: #1e40af;
   --color-navy: #1e3a8a;
@@ -381,27 +391,3 @@ img, video {
   }
 }
 
-/* VibeRescue Hero CTA Styling */
-#hero .bg-blue-600 {
-  background-color: hsl(25, 95%, 53%) !important;
-}
-
-#hero .bg-blue-600:hover {
-  background-color: hsl(25, 95%, 48%) !important;
-}
-
-#hero .shadow-blue-600\/30 {
-  box-shadow: 0 10px 15px -3px rgba(251, 146, 60, 0.3), 0 4px 6px -2px rgba(251, 146, 60, 0.3) !important;
-}
-
-#hero .border-2.border-gray-200 {
-  border-color: hsl(173, 80%, 40%) !important;
-  background-color: transparent !important;
-  color: hsl(173, 80%, 40%) !important;
-}
-
-#hero .border-2.border-gray-200:hover {
-  border-color: hsl(173, 80%, 50%) !important;
-  background-color: transparent !important;
-  color: hsl(173, 80%, 50%) !important;
-}

@@ -31,7 +31,7 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
   return (
     <section
       id="porque-elegirnos"
-      className="relative bg-gradient-to-b from-white to-blue-50/30 py-24 sm:py-32 overflow-hidden"
+      className="relative bg-gradient-to-b from-white to-[#eff4ff]/30 py-24 sm:py-32 overflow-hidden"
     >
       <Container className="relative z-10">
         <motion.div
@@ -47,7 +47,7 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6 leading-tight"
           >
             {content.title}{' '}
-            <span className="text-blue-600">{content.titleHighlight}</span>
+            <span className="text-[#1F5CFF]">{content.titleHighlight}</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
@@ -64,7 +64,7 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
             variants={fadeInUp}
             className="relative"
           >
-            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-50 to-gray-100">
+            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#eff4ff] to-gray-100">
               <Image
                 src={content.image}
                 alt={content.imageAlt}
@@ -74,7 +74,7 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
                 loading="lazy"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/20 to-transparent" />
             </div>
           </motion.div>
 
@@ -86,10 +86,10 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
                 <motion.div
                   key={index}
                   variants={fadeInUp}
-                  className="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300"
+                  className="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-200 hover:border-[#1F5CFF] hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
-                    <IconComponent className="w-7 h-7 text-blue-600" />
+                  <div className="w-14 h-14 rounded-2xl bg-[#eff4ff] flex items-center justify-center mb-6">
+                    <IconComponent className="w-7 h-7 text-[#1F5CFF]" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {value.title}

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, Gift, Shield } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import { ValueStackContent, valueStackContent } from '@/lib/content';
 import { iconMap } from '@/lib/iconMap';
@@ -32,8 +32,8 @@ export default function ValueStack({ content = valueStackContent }: ValueStackPr
     <section id="value-stack" className="relative py-24 sm:py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-100 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-green-100 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#dbe6ff] rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#dbe6ff] rounded-full blur-3xl" />
       </div>
 
       <Container className="relative z-10">
@@ -47,7 +47,7 @@ export default function ValueStack({ content = valueStackContent }: ValueStackPr
         >
           <motion.span
             variants={fadeInUp}
-            className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-6"
+            className="inline-block px-4 py-2 bg-[#dbe6ff] text-[#1F5CFF] rounded-full text-sm font-semibold mb-6"
           >
             {content.sectionLabel}
           </motion.span>
@@ -56,7 +56,7 @@ export default function ValueStack({ content = valueStackContent }: ValueStackPr
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
           >
             {content.title}{' '}
-            <span className="text-blue-600">{content.titleHighlight}</span>
+            <span className="text-[#1F5CFF]">{content.titleHighlight}</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
@@ -82,76 +82,25 @@ export default function ValueStack({ content = valueStackContent }: ValueStackPr
                 variants={fadeInUp}
                 className={`relative p-6 rounded-2xl border-2 transition-all duration-300 ${
                   item.highlight
-                    ? 'bg-blue-50 border-blue-200 shadow-lg shadow-blue-100'
-                    : 'bg-white border-gray-200 hover:border-blue-200 hover:shadow-lg'
+                    ? 'bg-[#eff4ff] border-[#dbe6ff] shadow-lg shadow-[#dbe6ff]'
+                    : 'bg-white border-gray-200 hover:border-[#dbe6ff] hover:shadow-lg'
                 }`}
               >
                 {item.highlight && (
-                  <span className="absolute -top-3 left-6 px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
+                  <span className="absolute -top-3 left-6 px-3 py-1 bg-[#eff4ff]0 text-white text-xs font-semibold rounded-full">
                     Most Popular
                   </span>
                 )}
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
-                  item.highlight ? 'bg-blue-600 text-white' : 'bg-blue-100 text-blue-600'
+                  item.highlight ? 'bg-[#eff4ff]0 text-white' : 'bg-[#dbe6ff] text-[#1F5CFF]'
                 }`}>
                   <IconComponent className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 mb-4">{item.description}</p>
-                {item.perceivedValue && (
-                  <div className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-green-600 font-semibold">{item.perceivedValue}</span>
-                  </div>
-                )}
+                <p className="text-gray-600">{item.description}</p>
               </motion.div>
             );
           })}
-        </motion.div>
-
-        {/* Price Comparison */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={staggerContainer}
-          className="max-w-2xl mx-auto mb-12"
-        >
-          <motion.div
-            variants={fadeInUp}
-            className="bg-white border-2 border-gray-200 rounded-3xl p-8 text-center shadow-xl"
-          >
-            <div className="mb-6">
-              <span className="text-gray-500 text-lg">Total Value:</span>
-              <div className="text-4xl font-bold text-gray-400 line-through">
-                {content.totalPerceivedValue}
-              </div>
-            </div>
-            <div className="mb-6">
-              <span className="text-gray-500 text-lg">Your Investment:</span>
-              <div className="text-5xl sm:text-6xl font-bold text-blue-600">
-                {content.actualPrice}
-              </div>
-            </div>
-            <div className="inline-block px-6 py-2 bg-green-100 text-green-700 rounded-full font-bold text-lg mb-8">
-              {content.savings}
-            </div>
-
-            {/* CTA Button */}
-            <motion.a
-              href={content.ctaLink}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="group w-full inline-flex items-center justify-center gap-3 px-8 py-5 bg-blue-600 text-white text-xl font-bold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40"
-            >
-              {content.ctaText}
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </motion.a>
-
-            {content.ctaSubtext && (
-              <p className="mt-4 text-sm text-gray-500">{content.ctaSubtext}</p>
-            )}
-          </motion.div>
         </motion.div>
 
         {/* Guarantee */}

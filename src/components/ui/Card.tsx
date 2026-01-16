@@ -34,9 +34,9 @@ export default function Card({
   variant = 'default',
 }: CardProps) {
   const variantClasses = {
-    default: 'bg-white border border-gray-100 hover:border-blue-200',
-    gradient: 'bg-gradient-to-br from-white to-blue-50/30 border border-blue-100',
-    bordered: 'bg-white border-2 border-gray-200 hover:border-blue-400',
+    default: 'bg-white border border-gray-100 hover:border-[#dbe6ff]',
+    gradient: 'bg-gradient-to-br from-white to-[#eff4ff]/30 border border-[#dbe6ff]',
+    bordered: 'bg-white border-2 border-gray-200 hover:border-[#4d7aff]',
   };
 
   return (
@@ -44,7 +44,7 @@ export default function Card({
       variants={fadeInUp}
       className={cn(
         'group relative rounded-2xl transition-all duration-300',
-        'hover:shadow-xl hover:shadow-blue-500/5',
+        'hover:shadow-xl hover:shadow-[#1F5CFF]/5',
         variantClasses[variant],
         className
       )}
@@ -53,11 +53,11 @@ export default function Card({
         {Icon && (
           <div className="mb-6">
             <div className={cn(
-              'w-16 h-16 rounded-2xl bg-blue-50 group-hover:bg-blue-100',
+              'w-16 h-16 rounded-2xl bg-[#eff4ff] group-hover:bg-[#dbe6ff]',
               'flex items-center justify-center transition-colors',
               iconClassName
             )}>
-              <Icon className="w-8 h-8 text-blue-600" />
+              <Icon className="w-8 h-8 text-[#1F5CFF]" />
             </div>
           </div>
         )}

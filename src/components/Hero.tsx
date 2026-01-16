@@ -70,7 +70,7 @@ export default function Hero({ content = homepageContent.hero }: HeroProps) {
       onMouseLeave={() => setIsPaused(false)}
     >
       {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-white" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#eff4ff]/50 via-white to-white" />
 
       {/* Background Image */}
       {slide.backgroundImage && (
@@ -106,7 +106,7 @@ export default function Hero({ content = homepageContent.hero }: HeroProps) {
               >
                 {/* Heading */}
                 <motion.div variants={fadeInUp} className="mb-6">
-                  <h2 className="text-sm uppercase tracking-widest text-blue-600 font-semibold mb-4">
+                  <h2 className="text-sm uppercase tracking-widest text-[#1F5CFF] font-semibold mb-4">
                     {slide.heading}
                   </h2>
                 </motion.div>
@@ -133,7 +133,7 @@ export default function Hero({ content = homepageContent.hero }: HeroProps) {
                     href={slide.ctaLink}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-blue-600 text-white text-lg font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40"
+                    className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-[#1F5CFF] text-white text-lg font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40"
                   >
                     {slide.ctaText}
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -159,7 +159,7 @@ export default function Hero({ content = homepageContent.hero }: HeroProps) {
                       loading={currentSlide === 0 ? 'eager' : 'lazy'}
                     />
                     {/* Subtle overlay for text readability if needed */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/10 to-transparent" />
                   </div>
                 )}
               </motion.div>
@@ -196,7 +196,7 @@ export default function Hero({ content = homepageContent.hero }: HeroProps) {
                 onClick={() => goToSlide(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   index === currentSlide
-                    ? 'w-8 bg-blue-600'
+                    ? 'w-8 bg-[#1F5CFF]'
                     : 'w-2 bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}

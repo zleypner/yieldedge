@@ -10,4 +10,4 @@
 | Professional Services | https://www.yieldge.com/professional-services |
 | Real State | https://www.yieldge.com/real-state |
 | Viberescue | https://www.yieldge.com/viberescue |
-| Yieldedge | https://www.yieldge.com/yieldedge |
+| Costa Rica (Spanish) | https://www.yieldge.com/cr |

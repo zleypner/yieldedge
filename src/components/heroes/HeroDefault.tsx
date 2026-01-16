@@ -34,7 +34,7 @@ export default function HeroDefault({ slide }: HeroDefaultProps) {
       className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden pt-24"
     >
       {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-white" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#eff4ff]/50 via-white to-white" />
 
       {/* Background Image */}
       {slide.backgroundImage && (
@@ -60,7 +60,7 @@ export default function HeroDefault({ slide }: HeroDefaultProps) {
           >
             {/* Heading */}
             <motion.div variants={fadeInUp} className="mb-6">
-              <h2 className="text-sm uppercase tracking-widest text-blue-600 font-semibold mb-4">
+              <h2 className="text-sm uppercase tracking-widest text-[#1F5CFF] font-semibold mb-4">
                 {slide.heading}
               </h2>
             </motion.div>
@@ -87,7 +87,7 @@ export default function HeroDefault({ slide }: HeroDefaultProps) {
                 href={slide.ctaLink}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-blue-600 text-white text-lg font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40"
+                className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-[#1F5CFF] text-white text-lg font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40"
               >
                 {slide.ctaText}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -98,7 +98,7 @@ export default function HeroDefault({ slide }: HeroDefaultProps) {
                   href={slide.secondaryCta.link}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-5 bg-white text-gray-700 text-lg font-semibold rounded-full border-2 border-gray-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-5 bg-white text-gray-700 text-lg font-semibold rounded-full border-2 border-gray-200 hover:border-[#1F5CFF] hover:text-[#1F5CFF] transition-all duration-300"
                 >
                   {slide.secondaryCta.text}
                 </motion.a>
@@ -122,7 +122,7 @@ export default function HeroDefault({ slide }: HeroDefaultProps) {
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/10 to-transparent" />
               </div>
             )}
           </motion.div>

@@ -42,7 +42,7 @@ export default function SectionTitle({
       >
         {children}{' '}
         {highlight && (
-          <span className="font-light bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+          <span className="font-light bg-gradient-to-r from-[#1F5CFF] to-[#1F5CFF] bg-clip-text text-transparent">
             {highlight}
           </span>
         )}

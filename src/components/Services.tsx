@@ -35,7 +35,7 @@ export default function Services({ content = homepageContent.services }: Service
       className="relative w-full bg-white overflow-hidden"
     >
       {/* Background decoration - properly contained */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#dbe6ff]/30 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       {/* Main container - perfectly centered with equal horizontal padding */}
       <Container className="relative z-10 pt-32 pb-24 sm:pt-40 sm:pb-32">
@@ -49,7 +49,7 @@ export default function Services({ content = homepageContent.services }: Service
         <div className="max-w-3xl mb-16">
           <motion.p
             variants={fadeInUp}
-            className="text-blue-600 font-semibold mb-4 text-sm uppercase tracking-wide"
+            className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide"
           >
             {content.sectionLabel}
           </motion.p>
@@ -58,7 +58,7 @@ export default function Services({ content = homepageContent.services }: Service
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6"
           >
             {content.title}{' '}
-            <span className="text-blue-600">{content.titleHighlight}</span>
+            <span className="text-[#1F5CFF]">{content.titleHighlight}</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
@@ -76,10 +76,10 @@ export default function Services({ content = homepageContent.services }: Service
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="group relative bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-blue-300 hover:shadow-2xl transition-all duration-500"
+                className="group relative bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-[#1F5CFF] hover:shadow-2xl transition-all duration-500"
               >
                 {/* Image */}
-                <div className="relative w-full h-64 overflow-hidden bg-gradient-to-br from-blue-50 to-gray-100">
+                <div className="relative w-full h-64 overflow-hidden bg-gradient-to-br from-[#eff4ff] to-gray-100">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -107,16 +107,21 @@ export default function Services({ content = homepageContent.services }: Service
                   {/* Icon overlay */}
                   <div className="absolute top-6 left-6">
                     <div className="w-14 h-14 rounded-2xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                      <IconComponent className="w-7 h-7 text-blue-600" />
+                      <IconComponent className="w-7 h-7 text-[#1F5CFF]" />
                     </div>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {service.title}
                   </h3>
+                  {service.subtitle && (
+                    <p className="text-[#1F5CFF] font-medium mb-4 text-sm">
+                      {service.subtitle}
+                    </p>
+                  )}
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {service.description}
                   </p>
@@ -125,7 +130,7 @@ export default function Services({ content = homepageContent.services }: Service
                   <ul className="space-y-3 mb-6">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-gray-700 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mr-3" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#1F5CFF] mr-3" />
                         {feature}
                       </li>
                     ))}
@@ -136,7 +141,7 @@ export default function Services({ content = homepageContent.services }: Service
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ x: 4 }}
-                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-[#1F5CFF] font-semibold hover:gap-3 transition-all"
                   >
                     Learn More
                     <ArrowRight className="w-5 h-5" />

@@ -46,11 +46,11 @@ function FAQItem({ faq }: FAQItemProps) {
         <span className="text-lg sm:text-xl font-semibold text-gray-900 flex-1">
           {faq.question}
         </span>
-        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#dbe6ff] flex items-center justify-center">
           {isOpen ? (
-            <Minus className="w-5 h-5 text-blue-600" />
+            <Minus className="w-5 h-5 text-[#1F5CFF]" />
           ) : (
-            <Plus className="w-5 h-5 text-blue-600" />
+            <Plus className="w-5 h-5 text-[#1F5CFF]" />
           )}
         </div>
       </button>
@@ -113,7 +113,7 @@ export default function FAQ({ content = homepageContent.faq }: FAQProps) {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <motion.p
               variants={fadeInUp}
-              className="text-blue-600 font-semibold mb-4 text-sm uppercase tracking-wide"
+              className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide"
             >
               {content.sectionLabel}
             </motion.p>
@@ -122,7 +122,7 @@ export default function FAQ({ content = homepageContent.faq }: FAQProps) {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6"
             >
               {content.title}{' '}
-              <span className="text-blue-600">{content.titleHighlight}</span>
+              <span className="text-[#1F5CFF]">{content.titleHighlight}</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
@@ -153,7 +153,7 @@ export default function FAQ({ content = homepageContent.faq }: FAQProps) {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 text-[#1F5CFF] font-semibold hover:text-[#1a4edb] transition-colors"
             >
               {content.ctaText}
             </motion.a>

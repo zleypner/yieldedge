@@ -45,7 +45,7 @@ export default function Process({ content = homepageContent.process }: ProcessPr
         <div className="max-w-3xl mb-20">
           <motion.p
             variants={fadeInUp}
-            className="text-blue-600 font-semibold mb-4 text-sm uppercase tracking-wide"
+            className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide"
           >
             {content.sectionLabel}
           </motion.p>
@@ -54,7 +54,7 @@ export default function Process({ content = homepageContent.process }: ProcessPr
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6"
           >
             {content.title}{' '}
-            <span className="text-blue-600">{content.titleHighlight}</span>
+            <span className="text-[#1F5CFF]">{content.titleHighlight}</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
@@ -76,7 +76,7 @@ export default function Process({ content = homepageContent.process }: ProcessPr
               >
                 {/* Connector Line */}
                 {index < content.steps.length - 1 && (
-                <div className="hidden lg:block absolute left-1/2 top-full w-px h-24 bg-gradient-to-b from-blue-200 to-transparent -translate-x-1/2" />
+                <div className="hidden lg:block absolute left-1/2 top-full w-px h-24 bg-gradient-to-b from-[#dbe6ff] to-transparent -translate-x-1/2" />
               )}
 
               <div
@@ -86,7 +86,7 @@ export default function Process({ content = homepageContent.process }: ProcessPr
               >
                 {/* Image */}
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl group bg-gradient-to-br from-blue-50 to-gray-100">
+                  <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl group bg-gradient-to-br from-[#eff4ff] to-gray-100">
                     <Image
                       src={step.image}
                       alt={step.title}
@@ -96,12 +96,12 @@ export default function Process({ content = homepageContent.process }: ProcessPr
                       loading="lazy"
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/20 to-transparent" />
 
                     {/* Number Overlay */}
                     <div className="absolute top-6 left-6">
                       <div className="w-16 h-16 rounded-2xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                        <span className="text-2xl font-bold text-blue-600">
+                        <span className="text-2xl font-bold text-[#1F5CFF]">
                           {step.number}
                         </span>
                       </div>
@@ -112,8 +112,8 @@ export default function Process({ content = homepageContent.process }: ProcessPr
                 {/* Content */}
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center">
-                      <IconComponent className="w-7 h-7 text-blue-600" />
+                    <div className="w-14 h-14 rounded-2xl bg-[#eff4ff] flex items-center justify-center">
+                      <IconComponent className="w-7 h-7 text-[#1F5CFF]" />
                     </div>
                     <h3 className="text-3xl sm:text-4xl font-bold text-gray-900">
                       {step.title}
@@ -132,7 +132,7 @@ export default function Process({ content = homepageContent.process }: ProcessPr
                     <ul className="space-y-3">
                       {step.deliverables.map((item, idx) => (
                         <li key={idx} className="flex items-center text-gray-700">
-                          <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mr-3" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#1F5CFF] mr-3" />
                           {item}
                         </li>
                       ))}
@@ -159,7 +159,7 @@ export default function Process({ content = homepageContent.process }: ProcessPr
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-3 px-8 py-5 bg-blue-600 text-white text-lg font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40"
+            className="inline-flex items-center gap-3 px-8 py-5 bg-[#1F5CFF] text-white text-lg font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40"
           >
             {content.ctaText}
             <ArrowRight className="w-5 h-5" />

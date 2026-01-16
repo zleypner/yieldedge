@@ -88,7 +88,7 @@ export default function Footer() {
                   target={social.href.startsWith('http') ? '_blank' : undefined}
                   rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 rounded-lg bg-white border border-gray-200 hover:border-blue-300 hover:bg-blue-50 flex items-center justify-center transition-all text-gray-600 hover:text-blue-600"
+                  className="w-10 h-10 rounded-lg bg-white border border-gray-200 hover:border-[#1F5CFF] hover:bg-[#eff4ff] flex items-center justify-center transition-all text-gray-600 hover:text-[#1F5CFF]"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -107,7 +107,7 @@ export default function Footer() {
                 <li key={link.text}>
                   <a
                     href={link.href}
-                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                    className="text-gray-600 hover:text-[#1F5CFF] transition-colors text-sm"
                   >
                     {link.text}
                   </a>
@@ -126,7 +126,7 @@ export default function Footer() {
                 <li key={link.text}>
                   <a
                     href={link.href}
-                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                    className="text-gray-600 hover:text-[#1F5CFF] transition-colors text-sm"
                   >
                     {link.text}
                   </a>
@@ -149,7 +149,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-md text-sm mb-8"
+              className="inline-block px-6 py-3 bg-[#1F5CFF] text-white font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-md text-sm mb-8"
             >
               Schedule a Consultation
             </motion.a>
@@ -164,7 +164,7 @@ export default function Footer() {
                   <li key={link.text}>
                     <a
                       href={link.href}
-                      className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                      className="text-gray-600 hover:text-[#1F5CFF] transition-colors text-sm"
                     >
                       {link.text}
                     </a>
@@ -175,7 +175,7 @@ export default function Footer() {
 
             {/* Contact Info */}
             <div className="mt-8 space-y-2 text-sm text-gray-600">
-              <p><strong>Email:</strong> <a href="mailto:info@yieldge.com" className="hover:text-blue-600">info@yieldge.com</a></p>
+              <p><strong>Email:</strong> <a href="mailto:info@yieldge.com" className="hover:text-[#1F5CFF]">info@yieldge.com</a></p>
             </div>
           </div>
         </div>
@@ -191,7 +191,7 @@ export default function Footer() {
             onClick={scrollToTop}
             whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="p-2 rounded-lg bg-white border border-gray-200 hover:border-blue-300 hover:bg-blue-50 text-gray-600 hover:text-blue-600 transition-all"
+            className="p-2 rounded-lg bg-white border border-gray-200 hover:border-[#1F5CFF] hover:bg-[#eff4ff] text-gray-600 hover:text-[#1F5CFF] transition-all"
             aria-label="Back to top"
           >
             <ArrowUp className="w-5 h-5" />

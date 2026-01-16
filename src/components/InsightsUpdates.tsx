@@ -70,7 +70,7 @@ export default function InsightsUpdates() {
                 href="/solutions"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 px-8 py-5 bg-blue-600 text-white text-lg font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40"
+                className="inline-flex items-center gap-3 px-8 py-5 bg-[#1F5CFF] text-white text-lg font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40"
               >
                 Explore Solutions
                 <ArrowRight className="w-5 h-5" />
@@ -109,14 +109,14 @@ export default function InsightsUpdates() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="flex-1 px-6 py-5 rounded-full border-2 border-gray-200 focus:border-blue-600 focus:outline-none text-lg transition-all duration-300"
+                  className="flex-1 px-6 py-5 rounded-full border-2 border-gray-200 focus:border-[#1F5CFF] focus:outline-none text-lg transition-all duration-300"
                   required
                 />
                 <motion.button
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-8 py-5 bg-blue-600 text-white text-lg font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40 whitespace-nowrap"
+                  className="px-8 py-5 bg-[#1F5CFF] text-white text-lg font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40 whitespace-nowrap"
                 >
                   Subscribe
                 </motion.button>

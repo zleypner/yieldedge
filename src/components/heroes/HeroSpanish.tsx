@@ -34,7 +34,7 @@ export default function HeroSpanish({ slide }: HeroSpanishProps) {
       className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden pt-24"
     >
       {/* Subtle gradient background with warm tones for LATAM feel */}
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-50/50 via-white to-blue-50/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-50/50 via-white to-[#eff4ff]/30" />
 
       {/* Background Image */}
       {slide.backgroundImage && (

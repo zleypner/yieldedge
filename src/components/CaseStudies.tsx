@@ -64,7 +64,7 @@ function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
         tabIndex={0}
         onClick={handleToggle}
         onKeyDown={handleKeyDown}
-        className="bg-white rounded-3xl border-2 border-gray-200 hover:border-blue-400 transition-all duration-300 overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex flex-col w-full"
+        className="bg-white rounded-3xl border-2 border-gray-200 hover:border-[#4d7aff] transition-all duration-300 overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#1F5CFF] focus:ring-offset-2 flex flex-col w-full"
       >
         {/* Always visible: Image and Title only */}
         <div className="relative w-full aspect-video overflow-hidden">
@@ -79,7 +79,7 @@ function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
           />
           {/* Category badge */}
           <div className="absolute top-4 left-4">
-            <span className="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full">
+            <span className="px-4 py-2 bg-[#1F5CFF] text-white text-sm font-semibold rounded-full">
               {caseStudy.category}
             </span>
           </div>
@@ -122,8 +122,8 @@ function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
                 <ul className="space-y-2">
                   {caseStudy.achievements.map((achievement, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <div className="w-2 h-2 rounded-full bg-blue-600" />
+                      <div className="w-6 h-6 rounded-full bg-[#dbe6ff] flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-2 h-2 rounded-full bg-[#1F5CFF]" />
                       </div>
                       <span className="text-gray-700">{achievement}</span>
                     </li>
@@ -142,7 +142,7 @@ export default function CaseStudies({ content = homepageContent.caseStudies }: C
   return (
     <section
       id="case-studies"
-      className="relative bg-gradient-to-b from-blue-50/30 to-white py-24 sm:py-32 overflow-hidden"
+      className="relative bg-gradient-to-b from-[#eff4ff]/30 to-white py-24 sm:py-32 overflow-hidden"
     >
       <Container className="relative z-10">
         <motion.div
@@ -153,12 +153,12 @@ export default function CaseStudies({ content = homepageContent.caseStudies }: C
         >
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16 sm:mb-20">
-            <p className="text-blue-600 font-semibold mb-4 text-sm uppercase tracking-wide">
+            <p className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide">
               {content.sectionLabel}
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
               {content.title}{' '}
-              <span className="text-blue-600">{content.titleHighlight}</span>
+              <span className="text-[#1F5CFF]">{content.titleHighlight}</span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               {content.description}
@@ -186,11 +186,11 @@ export default function CaseStudies({ content = homepageContent.caseStudies }: C
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="bg-white rounded-3xl p-8 md:p-10 text-center shadow-lg border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-3xl p-8 md:p-10 text-center shadow-lg border border-gray-200 hover:border-[#7d9eff] hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center">
-                    <IconComponent className="w-8 h-8 text-blue-600" />
+                  <div className="w-16 h-16 rounded-2xl bg-[#eff4ff] flex items-center justify-center">
+                    <IconComponent className="w-8 h-8 text-[#1F5CFF]" />
                   </div>
                 </div>
                 <p className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">

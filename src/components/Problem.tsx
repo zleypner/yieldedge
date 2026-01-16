@@ -37,11 +37,11 @@ export default function ProblemSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-blue-50/30 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-[#eff4ff]/30 overflow-hidden"
       id="problema"
     >
       {/* Subtle background glow - centered */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#1F5CFF]/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
       {/* Background decorative images - do not affect layout */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
@@ -81,7 +81,7 @@ export default function ProblemSection() {
             La mayoría de las empresas no tienen{' '}
             <span className="font-light">un problema de tecnología.</span>
             <br />
-            <span className="block mt-4 sm:mt-6 font-normal bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+            <span className="block mt-4 sm:mt-6 font-normal bg-gradient-to-r from-[#1F5CFF] to-[#1F5CFF] bg-clip-text text-transparent">
               Tienen un problema de rendimiento.
             </span>
           </motion.h2>
@@ -107,7 +107,7 @@ export default function ProblemSection() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-block px-10 py-5 bg-blue-600 text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40"
+              className="inline-block px-10 py-5 bg-[#1F5CFF] text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/25 hover:shadow-2xl hover:shadow-[#1F5CFF]/40"
               aria-label="Agenda una consulta gratuita"
             >
               Hablemos de tu proyecto

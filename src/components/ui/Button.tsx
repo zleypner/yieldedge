@@ -28,7 +28,7 @@ export default function Button({
   const baseClasses = 'font-semibold rounded-full transition-all duration-300 text-center inline-flex items-center justify-center gap-3';
 
   const variantClasses = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30',
+    primary: 'bg-[#1F5CFF] text-white hover:bg-[#1a4edb] shadow-lg shadow-[#1F5CFF]/20 hover:shadow-xl hover:shadow-[#1F5CFF]/30',
     secondary: 'bg-white/80 backdrop-blur-sm text-gray-900 hover:bg-gray-50 border border-gray-200 hover:border-gray-300',
     ghost: 'bg-transparent text-gray-700 hover:bg-gray-100 border border-gray-200',
   };

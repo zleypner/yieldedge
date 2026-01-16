@@ -91,6 +91,7 @@ export interface ValueStackContent {
 export interface Service {
   icon: string; // Icon component name
   title: string;
+  subtitle?: string; // Short compelling statement
   description: string;
   features: string[];
   image: string;
@@ -215,23 +216,26 @@ export const homepageContent: PageContent = {
     services: [
       {
         icon: 'Shield',
-        title: 'QA and Test Automation',
-        description: 'Comprehensive quality assurance and automated testing services to ensure your software meets the highest standards',
-        features: ['Automated testing', 'Quality assurance', 'Performance testing', 'CI/CD integration'],
+        title: 'QA & Test Automation',
+        subtitle: 'Ship faster with confidence through automated quality assurance built into your delivery pipeline.',
+        description: 'We ensure your software performs flawlessly before it reaches users. Our QA and test automation services reduce bugs, improve stability, and protect your release timelines without slowing development.',
+        features: ['Automated test suites (unit, integration, E2E)', 'Manual and exploratory testing', 'Performance and load testing', 'CI/CD testing integration'],
         image: '/assets/img4.jpg',
       },
       {
         icon: 'Shield',
         title: 'Security Services',
-        description: 'Advanced cybersecurity solutions and threat protection to safeguard your digital assets',
-        features: ['Cybersecurity', 'Threat protection', 'Security audits', 'Compliance'],
+        subtitle: 'Protect your systems, data, and reputation with enterprise-grade cybersecurity.',
+        description: 'We help organizations identify vulnerabilities, prevent attacks, and stay compliant in an increasingly hostile digital landscape. Security is built into every layer before threats become incidents.',
+        features: ['Cybersecurity assessments and hardening', 'Threat detection and prevention', 'Security audits and risk analysis', 'Compliance support (SOC, ISO, best practices)'],
         image: '/assets/img5.jpg',
       },
       {
         icon: 'Target',
         title: 'Technology Consulting',
-        description: 'Strategic technology guidance to drive digital transformation and business growth',
-        features: ['Strategic planning', 'Digital transformation', 'Architecture design', 'Best practices'],
+        subtitle: 'Turn technology decisions into long-term business advantages.',
+        description: 'We work alongside your leadership team to design scalable architectures, modernize systems, and align technology with business goals without unnecessary complexity.',
+        features: ['Strategic technology planning', 'Digital transformation initiatives', 'System and architecture design', 'Engineering best practices'],
         image: '/assets/img6.jpg',
       },
       {
@@ -662,6 +666,224 @@ export const yieldedgeContent: PageContent = {
     ctaSubtext: '📅 Immediate availability • 💬 No commitment • ⚡ Clear results',
     image: '/assets/img3.jpg', // Reusing same image
     imageAlt: 'Let\'s work together',
+  },
+};
+
+// Costa Rica / Spanish page content
+export const crContent: PageContent = {
+  hero: {
+    slides: [
+      {
+        heading: 'Tu Socio de Crecimiento',
+        subheading: 'Aumenta Tus Leads e Ingresos Con Un Sistema Que Da Seguimiento Por Ti',
+        description: 'Ayudamos a negocios a convertir visitantes en llamadas agendadas y clientes que pagan a través de sitios web inteligentes y seguimientos automatizados.',
+        ctaText: 'Agenda Una Llamada',
+        ctaLink: '/get-in-touch',
+        backgroundImage: '/assets/img1.jpg',
+      },
+    ],
+  },
+  services: {
+    sectionLabel: 'Lo Que Construimos',
+    title: 'Convierte visitantes en',
+    titleHighlight: 'clientes que pagan',
+    description: 'Construimos sitios web de alta conversión y sistemas de automatización que capturan leads, dan seguimiento automático, y te ayudan a cerrar más ventas — 24/7.',
+    services: [
+      {
+        icon: 'Globe',
+        title: 'Sitios Web y Landing Pages de Alta Conversión',
+        description: 'Sitios web profesionales diseñados para convertir visitantes en leads. Responsivos, rápidos y optimizados para tus objetivos de negocio.',
+        features: ['Diseño responsivo', 'Carga rápida', 'Optimizado para SEO', 'Enfocado en conversión'],
+        image: '/assets/img4.jpg',
+      },
+      {
+        icon: 'Users',
+        title: 'Captura de Leads + Conexión CRM',
+        description: 'Captura leads desde tu sitio web y sincronízalos automáticamente con tu CRM. Nunca pierdas un cliente potencial.',
+        features: ['Automatización de formularios', 'Integración CRM', 'Calificación de leads', 'Notificaciones instantáneas'],
+        image: '/assets/img5.jpg',
+      },
+      {
+        icon: 'MessageCircle',
+        title: 'Seguimientos Automatizados por Email / SMS / WhatsApp',
+        description: 'Configura secuencias de seguimiento automatizadas que nutren leads, responden preguntas y agendan llamadas — incluso cuando no estás disponible.',
+        features: ['Automatización de email', 'Seguimiento por SMS', 'Integración WhatsApp', 'Programación inteligente'],
+        image: '/assets/img6.jpg',
+      },
+      {
+        icon: 'BarChart',
+        title: 'Dashboards Simples y Seguimiento de Rendimiento',
+        description: 'Ve exactamente qué está funcionando con dashboards claros que muestran leads, conversiones, ingresos y ROI — todo en un solo lugar.',
+        features: ['Analíticas en tiempo real', 'Seguimiento de ingresos', 'Análisis de fuentes de leads', 'Reportes de ROI'],
+        image: '/assets/img4.jpg',
+      },
+      {
+        icon: 'Bot',
+        title: 'IA Opcional para Intake y Automatización de FAQs',
+        description: 'Deja que la IA maneje las preguntas iniciales, califique leads y agende citas automáticamente — liberándote para enfocarte en cerrar ventas.',
+        features: ['Chat con IA', 'Automatización de FAQs', 'Calificación de leads', 'Agendamiento de citas'],
+        image: '/assets/img5.jpg',
+      },
+    ],
+  },
+  whyChooseUs: {
+    title: '¿Por Qué Elegir',
+    titleHighlight: 'Yieldge?',
+    description: 'Sistemas probados usados por negocios en crecimiento. Hemos ayudado a clientes a aumentar leads, acelerar seguimientos y cerrar más ventas — para que te enfoques en lo que mejor haces.',
+    image: '/assets/img7.jpg',
+    imageAlt: 'Crecimiento y rendimiento',
+    values: [
+      {
+        icon: 'Target',
+        title: 'Flujos de Trabajo Probados',
+        description: 'Usamos sistemas y flujos de trabajo probados que han ayudado a negocios de diversas industrias a aumentar ingresos y reducir trabajo manual.',
+      },
+      {
+        icon: 'Zap',
+        title: 'Resultados Comprobados',
+        description: 'Nuestros clientes ven tiempos de respuesta más rápidos, más llamadas agendadas y mayores ingresos — con métricas claras que lo demuestran.',
+      },
+      {
+        icon: 'Lightbulb',
+        title: 'Soluciones Personalizadas',
+        description: 'Cada sistema se construye para las necesidades específicas de tu negocio, objetivos y herramientas existentes — sin plantillas genéricas.',
+      },
+      {
+        icon: 'Shield',
+        title: 'Confiable y Seguro',
+        description: 'Seguridad y confiabilidad de nivel empresarial. Tu información de clientes y datos de negocio permanecen protegidos con estándares líderes en la industria.',
+      },
+    ],
+  },
+  process: {
+    sectionLabel: 'Cómo Funciona',
+    title: 'De revisión a',
+    titleHighlight: 'ingresos en 3 pasos',
+    description: 'Nuestro proceso probado asegura una implementación fluida y resultados medibles — desde la evaluación inicial hasta el crecimiento continuo.',
+    steps: [
+      {
+        icon: 'ClipboardCheck',
+        number: '01',
+        title: 'Revisión Inicial (Sin Compromiso)',
+        description: 'Analizamos tu flujo actual de leads, identificamos oportunidades y te mostramos exactamente cómo la automatización puede aumentar tus ingresos.',
+        image: '/assets/img9.jpg',
+        deliverables: ['Análisis del estado actual', 'Evaluación de oportunidades', 'Proyección de ROI'],
+      },
+      {
+        icon: 'FileCode',
+        number: '02',
+        title: 'Construimos y Conectamos Tu Sistema',
+        description: 'Construimos tu sitio web, configuramos la captura de leads, conectamos tu CRM y configuramos seguimientos automatizados — todo adaptado a tu negocio.',
+        image: '/assets/img10.jpg',
+        deliverables: ['Lanzamiento del sitio', 'Integración CRM', 'Configuración de automatización', 'Capacitación del equipo'],
+      },
+      {
+        icon: 'Rocket',
+        number: '03',
+        title: 'Lanzamiento, Medición y Mejora de Ingresos',
+        description: 'Tu sistema entra en funcionamiento 24/7. Monitoreamos el rendimiento, optimizamos conversiones y te ayudamos a escalar lo que funciona.',
+        image: '/assets/img11.jpg',
+        deliverables: ['Monitoreo de rendimiento', 'Optimización de conversiones', 'Soporte continuo', 'Crecimiento de ingresos'],
+      },
+    ],
+    ctaText: 'Agenda Una Revisión Inicial',
+  },
+  caseStudies: {
+    sectionLabel: 'Casos de Éxito',
+    title: 'Resultados Reales para',
+    titleHighlight: 'Negocios en Crecimiento',
+    description: 'Ve cómo hemos ayudado a negocios de diversas industrias a aumentar leads, acelerar seguimientos y crecer ingresos con automatización inteligente.',
+    caseStudies: [
+      {
+        title: 'Negocio de Servicios',
+        category: 'Generación de Leads',
+        location: 'San José, CR',
+        description: 'Un negocio de servicios luchando con seguimientos lentos y oportunidades perdidas. Construimos un sitio web de alta conversión con captura de leads automatizada y secuencias de seguimiento.',
+        achievements: [
+          'Aumentó leads calificados en 55%',
+          'Redujo tiempo de respuesta de horas a minutos',
+          'Agendó 3x más llamadas por mes',
+        ],
+        image: '/assets/img12.jpg',
+      },
+      {
+        title: 'Agencia',
+        category: 'Automatización de Operaciones',
+        location: 'Heredia, CR',
+        description: 'Una agencia manejando múltiples clientes con procesos manuales. Construimos flujos automatizados para intake de leads, comunicación con clientes y seguimiento de proyectos.',
+        achievements: [
+          'Redujo tiempo administrativo en 50%',
+          'Mejoró tiempo de respuesta al cliente en 80%',
+          'Aumentó capacidad de clientes sin contratar',
+        ],
+        image: '/assets/img12.jpg',
+      },
+      {
+        title: 'Marca E-commerce',
+        category: 'Crecimiento de Ingresos',
+        location: 'Alajuela, CR',
+        description: 'Una marca e-commerce necesitando mejor captura de leads y seguimiento de clientes. Implementamos secuencias de email automatizadas e integración CRM.',
+        achievements: [
+          'Aumentó tasa de conversión de email en 40%',
+          'Redujo abandono de carrito en 35%',
+          'Creció ingresos mensuales en 28%',
+        ],
+        image: '/assets/img12.jpg',
+      },
+    ],
+    stats: [
+      { icon: 'Timer', value: '40%', label: 'Tiempo de respuesta más rápido' },
+      { icon: 'TrendingUp', value: '55%', label: 'Más llamadas agendadas' },
+      { icon: 'DollarSign', value: '50%', label: 'Menos seguimiento manual' },
+      { icon: 'BarChart', value: '24/7', label: 'Visibilidad clara de ingresos' },
+    ],
+  },
+  faq: {
+    sectionLabel: 'Preguntas Frecuentes',
+    title: '¿Preguntas?',
+    titleHighlight: 'Tenemos respuestas',
+    description: 'Preguntas comunes sobre nuestras soluciones de sitios web y automatización',
+    faqs: [
+      {
+        question: '¿Esto funcionará para mi tipo de negocio?',
+        answer: 'Sí. Nuestros sistemas funcionan para negocios de servicios, agencias, restaurantes, bufetes de abogados, clínicas, PYMEs, marcas e-commerce y más. Personalizamos cada solución para adaptarse a tus necesidades específicas e industria.',
+      },
+      {
+        question: '¿Mis datos están seguros y privados?',
+        answer: 'Absolutamente. Implementamos medidas de seguridad de nivel empresarial incluyendo almacenamiento de datos encriptado, infraestructura cloud segura y controles de acceso estrictos. Tu información de clientes y datos de negocio están protegidos con estándares de seguridad líderes en la industria. Nunca compartimos ni vendemos tus datos.',
+      },
+      {
+        question: '¿Cuánto tiempo toma la configuración?',
+        answer: 'Depende del alcance de tu proyecto. Sitios web simples con automatización básica pueden estar listos en 2-4 semanas. Sistemas más completos típicamente toman 6-12 semanas. Trabajamos en fases, así que empezarás a ver valor temprano en el proceso.',
+      },
+      {
+        question: '¿Cuál es el costo?',
+        answer: 'La inversión varía según tus necesidades específicas y tamaño del negocio. Agenda una revisión inicial y te proporcionaremos una propuesta detallada con precios claros. La mayoría de clientes ve ROI dentro de 6-12 meses a través de leads e ingresos aumentados.',
+      },
+      {
+        question: '¿Necesito conocimiento técnico?',
+        answer: 'No se requiere experiencia técnica. Diseñamos sistemas fáciles de usar y proporcionamos capacitación completa para tu equipo. También ofrecemos soporte continuo para asegurar una operación fluida. Si surgen problemas, nuestro equipo de soporte está disponible para ayudar.',
+      },
+      {
+        question: '¿Puede integrarse con mis herramientas existentes?',
+        answer: 'Sí. Nos especializamos en integrar con herramientas de negocio populares, CRMs (como HubSpot, Salesforce), plataformas de email, procesadores de pago y otras herramientas que ya usas. Nuestras soluciones están diseñadas para mejorar tu flujo de trabajo actual, no interrumpirlo.',
+      },
+    ],
+    ctaText: 'Agenda una consulta',
+  },
+  finalCTA: {
+    sectionLabel: 'Oferta Especial',
+    title: '¿Listo Para Dejar de Perder Leads?',
+    description: 'Agenda una revisión inicial sin compromiso. Analizaremos tu flujo actual de leads, identificaremos oportunidades y te mostraremos exactamente cómo la automatización puede aumentar tus ingresos.',
+    benefits: [
+      'Estrategia personalizada para tu negocio',
+      'Proyección de ROI y plan de implementación',
+      'Respuestas a todas tus preguntas técnicas',
+    ],
+    ctaText: 'Agenda Una Revisión Inicial',
+    ctaSubtext: '📅 Disponibilidad inmediata • 💬 Sin compromiso • ⚡ Resultados claros',
+    image: '/assets/img3.jpg',
+    imageAlt: 'Trabajemos juntos',
   },
 };
 

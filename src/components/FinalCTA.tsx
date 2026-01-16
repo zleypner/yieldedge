@@ -23,7 +23,7 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
   return (
     <section className="relative bg-white py-24 sm:py-32 overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-50/30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#eff4ff] via-white to-[#eff4ff]/30" />
 
       <Container className="relative z-10">
         <motion.div
@@ -36,13 +36,13 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
             {/* Content */}
             <div className="p-10 sm:p-12 lg:p-16 flex flex-col justify-center">
               <motion.div variants={fadeInUp}>
-                <p className="text-blue-100 font-semibold mb-4 text-sm uppercase tracking-wide">
+                <p className="text-[#dbe6ff] font-semibold mb-4 text-sm uppercase tracking-wide">
                   {content.sectionLabel}
                 </p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                   {content.title}
                 </h2>
-                <p className="text-lg sm:text-xl text-blue-50 leading-relaxed mb-8">
+                <p className="text-lg sm:text-xl text-[#eff4ff] leading-relaxed mb-8">
                   {content.description}
                 </p>
 
@@ -66,7 +66,7 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-white text-blue-600 text-lg font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:bg-blue-50 group"
+                    className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-white text-[#1F5CFF] text-lg font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:bg-[#eff4ff] group"
                   >
                     {content.ctaText}
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -74,7 +74,7 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
                 </div>
 
                 {content.ctaSubtext && (
-                  <div className="mt-6 text-sm text-blue-100">
+                  <div className="mt-6 text-sm text-[#dbe6ff]">
                     <p>{content.ctaSubtext}</p>
                   </div>
                 )}
@@ -82,7 +82,7 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
             </div>
 
             {/* Image */}
-            <div className="relative min-h-[400px] lg:min-h-[600px] bg-blue-700">
+            <div className="relative min-h-[400px] lg:min-h-[600px] bg-[#1a4edb]">
               <Image
                 src={content.image}
                 alt={content.imageAlt}
@@ -92,7 +92,7 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
                 loading="lazy"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-blue-600/20" />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#1F5CFF]/20" />
             </div>
           </div>
         </div>
