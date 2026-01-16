@@ -124,28 +124,12 @@ export const homepageContent: PageContent = {
   hero: {
     slides: [
       {
-        heading: 'DIGITAL TRANSFORMATION',
-        subheading: 'Transform your business with cutting-edge expertise',
-        description: 'Our approach combines nearshore excellence with world-class technical talent. From enterprise solutions to seamless integrations, our professionals align with your vision and goals, ensuring your organization leads with the latest technological innovations!',
-        ctaText: 'EXPLORE OUR SOLUTIONS',
-        ctaLink: '/solutions',
-        backgroundImage: '/assets/img1.jpg',
-      },
-      {
         heading: 'PROVEN EXCELLENCE',
         subheading: 'More than 15 years of innovation',
         description: 'With over 15+ years serving the global technology landscape, Yieldge has established itself as a trusted partner in digital transformation. We\'ve empowered countless organizations to streamline operations and achieve measurable results. Our dedicated professionals bring unmatched expertise and passion to every engagement. Partner with us to unlock your organization\'s full potential and drive lasting innovation!',
         ctaText: 'DISCOVER YIELDGE',
         ctaLink: '/company',
         backgroundImage: '/assets/img2.jpg',
-      },
-      {
-        heading: 'CLIENT-FIRST APPROACH',
-        subheading: 'Your success drives everything we do',
-        description: 'At Yieldge, we believe in building lasting partnerships. Our solutions are tailored to your unique requirements, ensuring every client receives dedicated support and strategic guidance. With an uncompromising focus on quality and results, our teams are committed to exceeding your expectations. Trust us to elevate your technology capabilities and accelerate your growth!',
-        ctaText: 'START A CONVERSATION',
-        ctaLink: '/get-in-touch',
-        backgroundImage: '/assets/img4.jpg',
       },
     ],
   },
@@ -306,7 +290,7 @@ export const homepageContent: PageContent = {
           'Increased conversion rate from inquiry to showing by 42%',
           'Automated 80% of initial lead communications',
         ],
-        image: '/assets/img12.jpg',
+        image: '/assets/img1.jpg',
       },
       {
         title: 'Property Management Firm',
@@ -318,7 +302,7 @@ export const homepageContent: PageContent = {
           'Reduced late rent payments by 70% through automated reminders',
           'Improved tenant satisfaction scores by 38%',
         ],
-        image: '/assets/img12.jpg',
+        image: '/assets/img4.jpg',
       },
       {
         title: 'Technology Investment Group',
@@ -374,18 +358,18 @@ export const homepageContent: PageContent = {
     ctaText: 'Schedule a free consultation',
   },
   finalCTA: {
-    sectionLabel: 'Comienza hoy',
-    title: 'Transforma tu negocio con tecnología que rinde',
-    description: 'Agenda una llamada estratégica gratuita de 30 minutos. Sin compromiso. Analizamos tu situación actual y definimos un plan de acción concreto.',
+    sectionLabel: 'Get Started Today',
+    title: 'Transform Your Business with Technology That Delivers',
+    description: 'Schedule a free 30-minute strategic call. No commitment. We analyze your current situation and define a concrete action plan.',
     benefits: [
-      'Estrategia personalizada para tu negocio',
-      'ROI proyectado y plan de implementación',
-      'Respuestas a todas tus preguntas técnicas',
+      'Personalized strategy for your business',
+      'Projected ROI and implementation plan',
+      'Answers to all your technical questions',
     ],
-    ctaText: 'Agenda tu llamada gratuita',
-    ctaSubtext: '📅 Disponibilidad inmediata • 💬 Sin compromiso • ⚡ Resultados claros',
+    ctaText: 'Schedule Your Free Call',
+    ctaSubtext: '📅 Immediate availability • 💬 No commitment • ⚡ Clear results',
     image: '/assets/img3.jpg',
-    imageAlt: 'Transforma tu negocio',
+    imageAlt: 'Transform your business',
   },
 };
 
@@ -818,18 +802,18 @@ export const realEstateContent: PageContent = {
     ctaText: 'Schedule a free consultation',
   },
   finalCTA: {
-    sectionLabel: 'Comienza hoy',
-    title: 'Transforma tu negocio con tecnología que rinde',
-    description: 'Agenda una llamada estratégica gratuita de 30 minutos. Sin compromiso. Analizamos tu situación actual y definimos un plan de acción concreto.',
+    sectionLabel: 'Get Started Today',
+    title: 'Transform Your Business with Technology That Delivers',
+    description: 'Schedule a free 30-minute strategic call. No commitment. We analyze your current situation and define a concrete action plan.',
     benefits: [
-      'Estrategia personalizada para tu negocio',
-      'ROI proyectado y plan de implementación',
-      'Respuestas a todas tus preguntas técnicas',
+      'Personalized strategy for your business',
+      'Projected ROI and implementation plan',
+      'Answers to all your technical questions',
     ],
-    ctaText: 'Agenda tu llamada gratuita',
-    ctaSubtext: '📅 Disponibilidad inmediata • 💬 Sin compromiso • ⚡ Resultados claros',
+    ctaText: 'Schedule Your Free Call',
+    ctaSubtext: '📅 Immediate availability • 💬 No commitment • ⚡ Clear results',
     image: '/assets/img3.jpg',
-    imageAlt: 'Transforma tu negocio',
+    imageAlt: 'Transform your business',
   },
 };
 
