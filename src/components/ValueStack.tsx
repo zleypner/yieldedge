@@ -72,7 +72,7 @@ export default function ValueStack({ content = valueStackContent }: ValueStackPr
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={staggerContainer}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12"
         >
           {content.items.map((item, index) => {
             const IconComponent = iconMap[item.icon] || iconMap.Globe;
@@ -80,19 +80,19 @@ export default function ValueStack({ content = valueStackContent }: ValueStackPr
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className={`relative p-6 rounded-2xl border-2 transition-all duration-300 ${
+                className={`relative p-4 sm:p-6 rounded-2xl border-2 transition-all duration-300 ${
                   item.highlight
                     ? 'bg-[#eff4ff] border-[#dbe6ff] shadow-lg shadow-[#dbe6ff]'
                     : 'bg-white border-gray-200 hover:border-[#dbe6ff] hover:shadow-lg'
                 }`}
               >
                 {item.highlight && (
-                  <span className="absolute -top-3 left-6 px-3 py-1 bg-[#eff4ff]0 text-white text-xs font-semibold rounded-full">
+                  <span className="absolute -top-3 left-6 px-3 py-1 bg-[#1F5CFF] text-white text-xs font-semibold rounded-full">
                     Most Popular
                   </span>
                 )}
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
-                  item.highlight ? 'bg-[#eff4ff]0 text-white' : 'bg-[#dbe6ff] text-[#1F5CFF]'
+                  item.highlight ? 'bg-[#1F5CFF] text-white' : 'bg-[#dbe6ff] text-[#1F5CFF]'
                 }`}>
                   <IconComponent className="w-6 h-6" />
                 </div>
@@ -111,11 +111,11 @@ export default function ValueStack({ content = valueStackContent }: ValueStackPr
           variants={fadeInUp}
           className="max-w-2xl mx-auto"
         >
-          <div className="flex items-start gap-4 p-6 bg-green-50 border-2 border-green-200 rounded-2xl">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 sm:p-6 bg-green-50 border-2 border-green-200 rounded-2xl">
             <div className="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center flex-shrink-0">
               <Shield className="w-8 h-8" />
             </div>
-            <div>
+            <div className="text-center sm:text-left">
               <h4 className="text-xl font-bold text-gray-900 mb-2">{content.guarantee.title}</h4>
               <p className="text-gray-600">{content.guarantee.description}</p>
             </div>
