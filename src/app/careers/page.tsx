@@ -53,6 +53,23 @@ export default function CareersPage() {
         </Container>
       </section>
 
+      {/* No Open Positions */}
+      <section className="py-16 sm:py-24">
+        <Container>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            className="max-w-2xl mx-auto text-center"
+          >
+            <p className="text-xl text-gray-700">
+              We currently don&apos;t have any open positions.
+            </p>
+          </motion.div>
+        </Container>
+      </section>
+
       <Footer />
     </div>
   );
