@@ -28,6 +28,8 @@ interface WhyChooseUsProps {
 }
 
 export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: WhyChooseUsProps) {
+  const hasNewLayout = content.topImage && content.bottomImage;
+
   return (
     <section
       id="porque-elegirnos"
@@ -41,7 +43,7 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
           viewport={{ once: true, amount: 0.1, margin: '0px 0px -100px 0px' }}
         >
           {/* Main Statement */}
-          <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-16 lg:mb-20 px-2">
+          <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-14 px-2">
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6 leading-tight"
@@ -51,57 +53,117 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-600 leading-relaxed"
+              className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed"
             >
               {content.description}
             </motion.p>
           </div>
 
-          {/* Split Layout: Image + Values */}
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-20">
-            {/* Image Side */}
-            <motion.div
-              variants={fadeInUp}
-              className="relative"
-            >
-              <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl bg-gradient-to-br from-[#eff4ff] to-gray-100">
-                <Image
-                  src={content.image}
-                  alt={content.imageAlt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  quality={90}
-                  loading="lazy"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/20 to-transparent" />
-              </div>
-            </motion.div>
+          {hasNewLayout ? (
+            <>
+              {/* Top Image */}
+              <motion.div variants={fadeInUp} className="mb-10 sm:mb-14">
+                <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl bg-gradient-to-br from-[#eff4ff] to-gray-100">
+                  <Image
+                    src={content.topImage!}
+                    alt={content.topImageAlt || 'Top section image'}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+                    quality={85}
+                    loading="lazy"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                </div>
+              </motion.div>
 
-            {/* Values Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
-              {content.values.map((value, index) => {
-                const IconComponent = iconMap[value.icon] || iconMap.Shield;
-                return (
-                  <motion.div
-                    key={index}
-                    variants={fadeInUp}
-                    className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-lg border border-gray-200 hover:border-[#1F5CFF] hover:shadow-xl transition-all duration-300"
-                  >
-                    <div className="w-11 h-11 sm:w-12 lg:w-14 sm:h-12 lg:h-14 rounded-xl sm:rounded-2xl bg-[#eff4ff] flex items-center justify-center mb-4 sm:mb-5 lg:mb-6">
-                      <IconComponent className="w-5 h-5 sm:w-6 lg:w-7 sm:h-6 lg:h-7 text-[#1F5CFF]" />
-                    </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
-                      {value.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      {value.description}
-                    </p>
-                  </motion.div>
-                );
-              })}
+              {/* Cards Grid - 2x2 */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-10 sm:mb-14">
+                {content.values.map((value, index) => {
+                  const IconComponent = iconMap[value.icon] || iconMap.Shield;
+                  return (
+                    <motion.div
+                      key={index}
+                      variants={fadeInUp}
+                      className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-200 hover:border-[#1F5CFF] hover:shadow-xl transition-all duration-300 motion-safe:hover:-translate-y-1 flex flex-col h-full"
+                    >
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#eff4ff] flex items-center justify-center mb-5">
+                        <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-[#1F5CFF]" />
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+                        {value.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed text-base">
+                        {value.description}
+                      </p>
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              {/* Bottom Image */}
+              <motion.div variants={fadeInUp}>
+                <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl bg-gradient-to-br from-[#eff4ff] to-gray-100">
+                  <Image
+                    src={content.bottomImage!}
+                    alt={content.bottomImageAlt || 'Bottom section image'}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+                    quality={85}
+                    loading="lazy"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                </div>
+              </motion.div>
+            </>
+          ) : (
+            /* Legacy Layout: Side-by-side Image + Cards */
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
+              {/* Image Side */}
+              <motion.div
+                variants={fadeInUp}
+                className="relative"
+              >
+                <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl bg-gradient-to-br from-[#eff4ff] to-gray-100">
+                  <Image
+                    src={content.image}
+                    alt={content.imageAlt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    quality={90}
+                    loading="lazy"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/20 to-transparent" />
+                </div>
+              </motion.div>
+
+              {/* Values Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
+                {content.values.map((value, index) => {
+                  const IconComponent = iconMap[value.icon] || iconMap.Shield;
+                  return (
+                    <motion.div
+                      key={index}
+                      variants={fadeInUp}
+                      className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-lg border border-gray-200 hover:border-[#1F5CFF] hover:shadow-xl transition-all duration-300 motion-safe:hover:-translate-y-1"
+                    >
+                      <div className="w-11 h-11 sm:w-12 lg:w-14 sm:h-12 lg:h-14 rounded-xl sm:rounded-2xl bg-[#eff4ff] flex items-center justify-center mb-4 sm:mb-5 lg:mb-6">
+                        <IconComponent className="w-5 h-5 sm:w-6 lg:w-7 sm:h-6 lg:h-7 text-[#1F5CFF]" />
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+                        {value.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        {value.description}
+                      </p>
+                    </motion.div>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          )}
         </motion.div>
       </Container>
     </section>

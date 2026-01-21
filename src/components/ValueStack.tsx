@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Shield } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import { ValueStackContent, valueStackContent } from '@/lib/content';
 import { iconMap } from '@/lib/iconMap';
@@ -103,24 +102,6 @@ export default function ValueStack({ content = valueStackContent }: ValueStackPr
           })}
         </motion.div>
 
-        {/* Guarantee */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={fadeInUp}
-          className="max-w-2xl mx-auto"
-        >
-          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-green-50 border-2 border-green-200 rounded-xl sm:rounded-2xl">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-600 text-white rounded-full flex items-center justify-center flex-shrink-0">
-              <Shield className="w-6 h-6 sm:w-8 sm:h-8" />
-            </div>
-            <div className="text-center sm:text-left">
-              <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-1.5 sm:mb-2">{content.guarantee.title}</h4>
-              <p className="text-sm sm:text-base text-gray-600">{content.guarantee.description}</p>
-            </div>
-          </div>
-        </motion.div>
       </Container>
     </section>
   );

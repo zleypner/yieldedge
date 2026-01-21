@@ -112,6 +112,10 @@ export interface WhyChooseUsContent {
   description: string;
   image: string;
   imageAlt: string;
+  topImage?: string;
+  topImageAlt?: string;
+  bottomImage?: string;
+  bottomImageAlt?: string;
   values: Array<{
     icon: string;
     title: string;
@@ -1397,26 +1401,30 @@ export const constructionContent: PageContent = {
     description: 'We specialize in contractor websites and automation. Our clients book more estimates, respond faster, and close more jobs — with systems built for the trades.',
     image: '/assets/construction/kevin-grieve-QCdRhVj7N8w-unsplash.jpg',
     imageAlt: 'Construction success',
+    topImage: '/assets/construction/scott-blake-x-ghf9LjrVg-unsplash.jpg',
+    topImageAlt: 'Contractors working on site',
+    bottomImage: '/assets/construction/etienne-girardet-sgYamIzhAhg-unsplash.jpg',
+    bottomImageAlt: 'Professional construction team',
     values: [
       {
         icon: 'Target',
         title: 'Built for the Trades',
-        description: 'We understand contractors, HVAC, roofing, plumbing, remodeling — our systems are built for high-ticket local services.',
+        description: 'Purpose-built systems for contractors selling high-ticket local services — not generic software.',
       },
       {
         icon: 'Zap',
         title: 'Fast Response = More Jobs',
-        description: 'Instant follow-ups mean you connect with leads before your competitors. Speed wins in the trades.',
+        description: 'Instant follow-ups help you reach leads first and win more work. Speed closes deals.',
       },
       {
         icon: 'Lightbulb',
-        title: 'Custom for Your Business',
-        description: 'Every system is tailored to your services, service area, and how you book jobs — no generic templates.',
+        title: 'Custom to Your Business',
+        description: 'Tailored to your services, service area, and booking flow — no templates, no fluff.',
       },
       {
         icon: 'Shield',
         title: 'Reliable & Secure',
-        description: 'Enterprise-grade security and uptime. Your leads and customer information stay protected with industry-leading standards.',
+        description: 'Enterprise-grade uptime and security so your data — and your reputation — stay protected.',
       },
     ],
   },
