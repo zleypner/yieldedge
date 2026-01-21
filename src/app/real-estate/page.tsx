@@ -34,7 +34,7 @@ const Footer = dynamic(() => import('@/components/Footer'), {
   loading: () => <div className="min-h-[400px]" />,
 });
 
-export default function RealState() {
+export default function RealEstate() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />

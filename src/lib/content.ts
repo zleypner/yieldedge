@@ -901,7 +901,7 @@ export const realEstateContent: PageContent = {
         description: 'Generate qualified leads, streamline property management, and make data-driven investment decisions — all in one platform.',
         ctaText: 'Get Your Initial Review',
         ctaLink: '/get-in-touch',
-        backgroundImage: '/assets/realestate/precondo-ca-QHDFm084RNk-unsplash.jpg',
+        backgroundImage: '/assets/realestate/alejandra-cifre-gonzalez-ylyn5r4vxcA-unsplash.jpg',
       },
     ],
   },
