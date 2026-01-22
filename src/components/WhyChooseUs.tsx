@@ -70,7 +70,7 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
                     alt={content.topImageAlt || 'Top section image'}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-                    quality={85}
+                    quality={90}
                     loading="lazy"
                     className="object-cover"
                   />
@@ -110,7 +110,7 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
                     alt={content.bottomImageAlt || 'Bottom section image'}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-                    quality={85}
+                    quality={90}
                     loading="lazy"
                     className="object-cover"
                   />
@@ -129,7 +129,7 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
                     alt={content.imageAlt}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-                    quality={85}
+                    quality={90}
                     loading="lazy"
                     className="object-cover"
                   />
