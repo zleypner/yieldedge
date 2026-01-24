@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import FaviconSwitcher from "@/components/FaviconSwitcher";
+import HashScrollFix from "@/components/HashScrollFix";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yieldge.com';
 
@@ -265,6 +266,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased min-h-screen">
         <FaviconSwitcher />
+        <HashScrollFix />
         <div className="w-full overflow-x-hidden">
           {children}
         </div>

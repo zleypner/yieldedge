@@ -2,11 +2,15 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import { logoHref, solutionsHref, companyHref, careersHref } from '@/lib/navHref';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -20,10 +24,11 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
+  // Build nav links with dynamic hrefs based on current route context
   const navLinks = [
-    { label: 'Solutions', href: '/solutions' },
-    { label: 'Company', href: '/company' },
-    { label: 'Careers', href: '/careers' },
+    { label: 'Solutions', href: solutionsHref(pathname) },
+    { label: 'Company', href: companyHref(pathname) },
+    { label: 'Careers', href: careersHref(pathname) },
   ];
 
   return (
@@ -35,12 +40,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex justify-between items-center h-16 sm:h-20">
-          {/* Logo */}
-          <motion.a
-            href="/"
-            className="flex items-center cursor-pointer"
-          >
-            <div className="h-8 sm:h-10 w-auto relative flex-shrink-0">
+          {/* Logo - route-aware: links to vertical root when inside a vertical */}
+          <Link href={logoHref(pathname)} className="flex items-center cursor-pointer">
+            <motion.div
+              className="h-8 sm:h-10 w-auto relative flex-shrink-0"
+            >
               <Image
                 src="/brand/logo-main.png"
                 alt="Yieldge - Technology that Performs"
@@ -49,19 +53,19 @@ export default function Navbar() {
                 className="object-contain h-full w-auto"
                 priority
               />
-            </div>
-          </motion.a>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-base font-medium"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
 
             {/* CTA Button */}
@@ -123,17 +127,20 @@ export default function Navbar() {
             >
               <div className="px-4 sm:px-6 py-6 space-y-1">
                 {navLinks.map((link, index) => (
-                  <motion.a
+                  <motion.div
                     key={link.label}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="block text-gray-700 hover:text-[#1F5CFF] hover:bg-[#eff4ff] rounded-xl transition-all text-lg font-medium py-4 px-4 active:scale-[0.98]"
                   >
-                    {link.label}
-                  </motion.a>
+                    <Link
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block text-gray-700 hover:text-[#1F5CFF] hover:bg-[#eff4ff] rounded-xl transition-all text-lg font-medium py-4 px-4 active:scale-[0.98]"
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
                 ))}
 
                 <motion.a
